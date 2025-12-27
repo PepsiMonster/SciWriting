@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[russian]{babel}
+\usepackage{array}
+\usepackage{booktabs}
+
+\begin{document}
+
+\section*{Упражнение 5.14 --- Таблицы (пакет \texttt{array})}
+
+\subsection*{1) Начнём с простого примера таблицы}
+
+\begin{tabular}{lll}
+Животное & Еда  & Размер \\
+собака   & мясо & средний \\
+лошадь   & сено & большой \\
+лягушка  & мухи & маленький \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{2) Попробуем разные выравнивания с помощью \texttt{l}, \texttt{c} и \texttt{r}}
+
+\noindent Лево/Лево/Лево:
+\begin{tabular}{lll}
+Животное & Еда  & Размер \\
+собака   & мясо & средний \\
+лошадь   & сено & большой \\
+лягушка  & мухи & маленький \\
+\end{tabular}
+
+\medskip
+\noindent Центр/Центр/Центр:
+\begin{tabular}{ccc}
+Животное & Еда  & Размер \\
+собака   & мясо & средний \\
+лошадь   & сено & большой \\
+лягушка  & мухи & маленький \\
+\end{tabular}
+
+\medskip
+\noindent Право/Право/Право:
+\begin{tabular}{rrr}
+Животное & Еда  & Размер \\
+собака   & мясо & средний \\
+лошадь   & сено & большой \\
+лягушка  & мухи & маленький \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{3) Что будет, если в строке слишком мало элементов?}
+
+\noindent Если строка содержит меньше ячеек, чем объявлено в преамбуле (здесь \(3\) столбца),
+то недостающие ячейки остаются пустыми.
+
+\medskip
+\begin{tabular}{lll}
+Животное & Еда  & Размер \\
+собака   & мясо & средний \\
+лошадь   & сено \\        
+лягушка  & мухи & маленький \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{4) Что будет, если в строке слишком много элементов?}
+
+\noindent Если строка содержит больше ячеек, чем объявлено, LaTeX выдаст ошибку (часто
+\emph{``Extra alignment tab has been changed to \textbackslash cr''}). Следующий код
+\textbf{не} скомпилируется, если вставить его как есть:
+
+\medskip
+\begin{verbatim}
+\begin{tabular}{lll}
+Животное & Еда  & Размер \\
+собака   & мясо & средний & ЛИШНЕЕ \\ % 4 ячейки вместо 3
+лошадь   & сено & большой \\
+\end{tabular}
+\end{verbatim}
+
+\noindent Чтобы исправить, нужно либо убрать лишнюю ячейку, либо объявить \(4\) столбца в преамбуле.
+
+\bigskip
+
+\subsection*{5) Эксперименты с \texttt{\textbackslash multicolumn} (объединение ячеек по горизонтали)}
+
+\subsubsection*{5.1) Объединение \(2\) ячеек в одну}
+
+\begin{tabular}{lll}
+\toprule
+Животное & Еда  & Размер \\
+\midrule
+собака   & мясо & средний \\
+лягушка  & мухи & маленький \\
+фуат     & \multicolumn{2}{c}{неизвестно} \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+\subsubsection*{5.2) Отмена оформления для одной ячейки с помощью \texttt{\textbackslash multicolumn\{1\}\{...\}\{...\}}}
+
+\noindent Здесь первый столбец набирается курсивом и после значения добавляется двоеточие,
+но заголовок первого столбца оставляем обычным, используя \texttt{\textbackslash multicolumn}.
+
+\medskip
+\begin{tabular}{>{\itshape}l<{:}ll}
+\toprule
+\multicolumn{1}{l}{Животное} & Еда & Размер \\
+\midrule
+собака   & мясо & средний \\
+лошадь   & сено & большой \\
+лягушка  & мухи & маленький \\
+\bottomrule
+\end{tabular}
+
+\end{document}

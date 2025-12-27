@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{booktabs}
+
+\begin{document}
+
+\section*{Exercise 5.14 --- Tables (array package)}
+
+\subsection*{1) Start from the simple table example}
+
+\begin{tabular}{lll}
+Animal & Food & Size \\
+dog    & meat & medium \\
+horse  & hay  & large \\
+frog   & flies& small \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{2) Try different alignments using \texttt{l}, \texttt{c}, and \texttt{r}}
+
+\noindent Left/Left/Left:
+\begin{tabular}{lll}
+Animal & Food & Size \\
+dog    & meat & medium \\
+horse  & hay  & large \\
+frog   & flies& small \\
+\end{tabular}
+
+\medskip
+\noindent Center/Center/Center:
+\begin{tabular}{ccc}
+Animal & Food & Size \\
+dog    & meat & medium \\
+horse  & hay  & large \\
+frog   & flies& small \\
+\end{tabular}
+
+\medskip
+\noindent Right/Right/Right:
+\begin{tabular}{rrr}
+Animal & Food & Size \\
+dog    & meat & medium \\
+horse  & hay  & large \\
+frog   & flies& small \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{3) What happens if you have too few items in a table row?}
+
+\noindent If a row provides fewer cells than the preamble declares (here \(3\) columns),
+the missing cells are left empty.
+
+\medskip
+\begin{tabular}{lll}
+Animal & Food & Size \\
+dog    & meat & medium \\
+horse  & hay  \\        % missing the 3rd cell -> empty cell
+frog   & flies& small \\
+\end{tabular}
+
+\bigskip
+
+\subsection*{4) What happens if you have too many items in a table row?}
+
+\noindent If a row provides more cells than declared, LaTeX produces an error (commonly
+\emph{``Extra alignment tab has been changed to \textbackslash cr''}). The following code
+would \textbf{not} compile if used as-is:
+
+\medskip
+\begin{verbatim}
+\begin{tabular}{lll}
+Animal & Food & Size \\
+dog    & meat & medium & EXTRA \\ % too many cells (4 instead of 3)
+horse  & hay  & large \\
+\end{tabular}
+\end{verbatim}
+
+\noindent To fix it, either remove the extra cell, or declare \(4\) columns in the preamble.
+
+\bigskip
+
+\subsection*{5) Experiment with \texttt{\textbackslash multicolumn} (spanning across columns)}
+
+\subsubsection*{5.1) Merge \(2\) cells horizontally}
+
+\begin{tabular}{lll}
+\toprule
+Animal & Food & Size \\
+\midrule
+dog   & meat  & medium \\
+frog  & flies & small \\
+fuath & \multicolumn{2}{c}{unknown} \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+\subsubsection*{5.2) Override formatting in a single cell using \texttt{\textbackslash multicolumn\{1\}\{...\}\{...\}}}
+
+\noindent Here the first column is italic and adds a colon after each entry, but the header
+cell is kept normal by using \texttt{\textbackslash multicolumn}.
+
+\medskip
+\begin{tabular}{>{\itshape}l<{:}ll}
+\toprule
+\multicolumn{1}{l}{Animal} & Food & Size \\
+\midrule
+dog   & meat  & medium \\
+horse & hay   & large \\
+frog  & flies & small \\
+\bottomrule
+\end{tabular}
+
+\end{document}

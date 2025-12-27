@@ -1,0 +1,27 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Graham et~al.(1995)Graham, Knuth, and Patashnik]{Graham1995}
+Ronald~L. Graham, Donald~E. Knuth, and Oren Patashnik.
+\newblock \emph{Concrete Mathematics}.
+\newblock Addison-Wesley, 1995.
+
+\bibitem[Lamport(1994)]{Lamport1994}
+Leslie Lamport.
+\newblock \emph{LaTeX: A Document Preparation System}.
+\newblock Addison-Wesley, 2 edition, 1994.
+
+\bibitem[Thomas et~al.(2008)Thomas, Liu, Hall, and Darensbourg]{Thomas2008}
+Christine~M. Thomas, Tianbiao Liu, Michael~B. Hall, and Marcetta~Y.
+  Darensbourg.
+\newblock Series of mixed valent {Fe(II)Fe(I)} complexes that model the {H(OX)}
+  state of [{FeFe}]hydrogenase: Redox properties, density-functional theory
+  investigation, and reactivity with extrinsic {CO}.
+\newblock \emph{Inorg. Chem.}, 47\penalty0 (15):\penalty0 7009--7024, 2008.
+\newblock \doi{10.1021/ic800654a}.
+
+\end{thebibliography}

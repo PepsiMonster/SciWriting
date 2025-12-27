@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main6_ru.aux
+The style file: plainnat.bst
+Database file #1: learnlatex.bib
+Warning--I didn't find a database entry for "NotInDatabase"
+You've used 3 entries,
+            2773 wiz_defined-function locations,
+            615 strings with 5400 characters,
+and the built_in function-call counts, 1318 in all, are:
+= -- 105
+> -- 79
+< -- 1
++ -- 27
+- -- 24
+* -- 110
+:= -- 215
+add.period$ -- 10
+call.type$ -- 3
+change.case$ -- 16
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 62
+empty$ -- 109
+format.name$ -- 27
+if$ -- 267
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 24
+num.names$ -- 12
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 43
+stack$ -- 0
+substring$ -- 33
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 23
+warning$ -- 0
+while$ -- 10
+width$ -- 0
+write$ -- 47
+(There was 1 warning)

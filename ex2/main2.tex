@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+Hey world!
+
+This is a first document.
+Here   are     some      extra spaces --- but in the PDF they collapse to single spaces.
+
+This is a new paragraph. Notice the blank line above: it starts a new paragraph.
+
+Now we try a non-breaking space (hard space) using \texttt{\string~}:
+Mr.~Smith cannot break across lines.
+Also useful for things like p.~10 or fig.~2 later.
+
+Let's force some potential line breaks by using a longer sentence:
+This paragraph is intentionally long so LaTeX may decide to break lines in different places depending on page width and the words that appear near the end of each line.
+
+\bigskip
+Now let's print special characters (they normally have special meaning in LaTeX):
+
+\begin{itemize}
+  \item Curly braces: \{ and \}
+  \item Dollar sign: \$ (so we can show money like \$10)
+  \item Percent sign: \% (otherwise it starts a comment)
+  \item Ampersand: \& (otherwise used in tables)
+  \item Hash: \# 
+  \item Underscore: \_ (often used in math, so needs escaping in text)
+  \item Backslash: \textbackslash
+  \item Caret: \textasciicircum
+  \item Tilde: \textasciitilde
+\end{itemize}
+
+This sentence has a footnote\footnote{This is the footnote text.} to confirm commands work in the body.
+
+\end{document}

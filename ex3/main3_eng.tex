@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}   % for \mathbb
+\usepackage{bm}         % for \bm
+\usepackage{mathtools}  % loads amsmath + extras
+
+% Differential operator (upright d). For italic d use: \mathop{}\!d
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+
+\begin{document}
+
+\section*{Exercise: Math mode}
+
+\subsection*{1) Inline math}
+Inline formula: \( y = mx + c \).
+Another one: \( 5^{2} = 3^{2} + 4^{2} \).
+Superscripts and subscripts: \( a^{b} \) and \( a_{b} \), and also \( x_{n}^{2} \).
+
+Note: in math mode spaces are ignored, so \( a\;\;b \) and \( ab \) are very similar,
+and for “manual” spacing there are commands such as \( \, \), \( \; \), \( \quad \).
+
+\subsection*{2) Display math}
+The same formula, but on its own line:
+\[
+y = mx + c
+\]
+The text continues after the display formula as a normal paragraph.
+
+\subsection*{3) Greek letters (lower/upper case)}
+For example: \( \alpha, \beta, \gamma, \theta, \lambda, \pi, \omega \) and \( \Gamma, \Delta, \Theta, \Lambda, \Pi, \Omega \).
+
+\subsection*{4) Integral + neatly typeset \texttt{dx}}
+\[
+\int_{-\infty}^{+\infty} e^{-x^2} \diff x
+\]
+
+\subsection*{5) Numbered equation}
+\begin{equation}
+(x+y)(x-y)=x^{2}-y^{2}
+\end{equation}
+
+\subsection*{6) amsmath: alignment (align) and text inside math}
+\begin{align}
+Q_{n,0} &= 1, \quad Q_{0,k} = [k=0]; \\
+Q_{n,k} &= Q_{n-1,k}+Q_{n-1,k-1}+\binom{n}{k},
+\quad \text{for } n,k>0.
+\end{align}
+
+\subsection*{7) Matrices}
+\[
+\begin{pmatrix}
+a & b & c \\
+d & e & f
+\end{pmatrix}
+\quad
+\begin{bmatrix}
+1 & 2 \\
+-5 & -6
+\end{bmatrix}
+\]
+
+\subsection*{8) Fonts in math mode + nesting}
+Compare:
+\[
+\text{``size''} \neq \mathit{size} \neq \mathrm{size} \neq \mathbf{size}
+\]
+Individual styles:
+\[
+\mathrm{ABC}\quad
+\mathit{ABC}\quad
+\mathbf{ABC}\quad
+\mathsf{ABC}\quad
+\mathtt{ABC}\quad
+\mathbb{R}\ \mathbb{N}\ \mathbb{Z}
+\]
+
+Now nesting (compile and see what actually changes):
+\[
+\mathbf{\mathsf{A}} \quad \mathsf{\mathbf{A}} \quad \bm{\alpha} \quad \mathbf{\alpha}
+\]
+Hint: \( \mathbf{\alpha} \) typically does not bold Greek letters, while \( \bm{\alpha} \) does.
+
+\subsection*{9) Two more environments: gather and multline}
+\begin{gather}
+P(x)=ax^{5}+bx^{4}+cx^{3}+dx^{2}+ex+f\\
+x^2+x=10
+\end{gather}
+
+\begin{multline*}
+(a+b+c+d)x^{5}+(b+c+d+e)x^{4} \\
++(c+d+e+f)x^{3}+(d+e+f+a)x^{2}+(e+f+a+b)x\\
++(f+a+b+c)
+\end{multline*}
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[border=1cm]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[scale=2]
+
+% радиус окружности
+\def\r{1.5}
+
+% узлы по окружности
+\node[circle,draw] (A) at (90:\r) {A};
+\node[circle,draw] (B) at (18:\r) {B};
+\node[circle,draw] (C) at (-54:\r) {C};
+\node[circle,draw] (D) at (-126:\r) {D};
+\node[circle,draw] (E) at (162:\r) {E};
+
+% рёбра
+\draw (A) -- (B);
+\draw (B) -- (C);
+\draw (C) -- (D);
+\draw (D) -- (E);
+\draw (E) -- (A);
+
+% диагонали
+\draw[dashed] (A) -- (C);
+\draw[dashed] (B) -- (D);
+
+\end{tikzpicture}
+\end{document}

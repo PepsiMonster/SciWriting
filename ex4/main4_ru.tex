@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt]{article}
+% Для эксперимента \textwidth vs \linewidth скомпилируй один раз так:
+% \documentclass[a4paper,12pt,twocolumn]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{float}      % для [H]
+\usepackage[hidelinks]{hyperref}
+
+% Картинки в подпапке (рекомендуется):
+% Создай папку "figs" рядом с этим .tex файлом.
+\graphicspath{{figs/}}
+
+\begin{document}
+
+\section{Вставка изображений}
+Этот документ — «песочница» для задания 4.
+
+\subsection{1) Центрированное изображение (база)}
+Ниже — центрированная картинка. Замени \texttt{example-image} на свой файл
+(например, \texttt{myplot.pdf} или \texttt{photo.jpg}), положенный в \texttt{figs/}.
+
+\begin{center}
+\includegraphics[height=2cm]{example-image}
+\end{center}
+
+\section{Изменение вида изображений}
+\subsection{2) Высота против ширины}
+Одна и та же картинка, два способа задать размер:
+
+\begin{center}
+\includegraphics[height=0.35\textheight]{example-image}
+\end{center}
+
+Немного текста между примерами.
+
+\begin{center}
+\includegraphics[width=0.55\textwidth]{example-image}
+\end{center}
+
+\subsection{3) Масштаб и поворот}
+\begin{center}
+\includegraphics[scale=0.6, angle=15]{example-image}
+\end{center}
+
+\subsection{4) Обрезка и отсечение (trim + clip)}
+Значения в \texttt{trim} задаются как \emph{left bottom right top}.
+Попробуй менять числа и пересобирать PDF.
+
+\begin{center}
+\includegraphics[clip, trim=20 10 80 40, width=0.6\textwidth]{example-image}
+\end{center}
+
+\section{Плавающие изображения (floats)}
+\subsection{5) Floats с разными спецификаторами размещения}
+Добавим «рыбный» текст, чтобы у LaTeX был повод двигать объекты.
+
+\lipsum[1-3]
+
+Это \emph{тестовое место} (test location) в исходнике.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-a}
+  \caption{Плавающее изображение со спецификатором \texttt{[ht]}.}
+  \label{fig:ht}
+\end{figure}
+
+\lipsum[4-6]
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-b}
+  \caption{Плавающее изображение со спецификатором \texttt{[tb]}.}
+  \label{fig:tb}
+\end{figure}
+
+\lipsum[7-9]
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-c}
+  \caption{Плавающее изображение со спецификатором \texttt{[p]} (страница только для float).}
+  \label{fig:p}
+\end{figure}
+
+\lipsum[10-11]
+
+\subsection{6) Принудительное размещение \texttt{[H]}}
+Опция \texttt{[H]} (из пакета \texttt{float}) пытается поставить рисунок
+строго «здесь». Это может создать большие пустые области, поэтому использовать
+\texttt{[H]} стоит осторожно.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{example-image}
+  \caption{Float с \texttt{[H]} (строго здесь).}
+  \label{fig:H}
+\end{figure}
+
+\section{Перекрёстные ссылки}
+\subsection{7) Ссылки на рисунки}
+Смотри рисунок~\ref{fig:ht}, рисунок~\ref{fig:tb}, рисунок~\ref{fig:p} и рисунок~\ref{fig:H}.
+
+Если при первом прогоне видишь \textbf{??}, просто скомпилируй ещё раз:
+перекрёстные ссылки обычно требуют минимум \(2\) прогона.
+
+\subsection{8) \texttt{\textbackslash textwidth} против \texttt{\textbackslash linewidth}}
+Разницу проще всего увидеть с \texttt{twocolumn}. Скомпилируй один раз без
+\texttt{twocolumn}, затем включи его в строке \texttt{\textbackslash documentclass} и сравни.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{example-image}
+  \caption{Ширина задана относительно \texttt{\textbackslash textwidth}.}
+  \label{fig:textwidth}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{example-image}
+  \caption{Ширина задана относительно \texttt{\textbackslash linewidth}.}
+  \label{fig:linewidth}
+\end{figure}
+
+\section{Эксперименты с размещением \texttt{\textbackslash label}}
+\subsection{9) Что будет, если \texttt{\textbackslash label} стоит до \texttt{\textbackslash caption}?}
+Правильно ставить \texttt{\textbackslash label} \emph{после} (или внутри) \texttt{\textbackslash caption}.
+Ниже мы намеренно делаем неправильно, чтобы увидеть результат.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.55\textwidth]{example-image}
+  \label{fig:wronglabel} % НАРОЧНО неправильно: до \caption
+  \caption{Здесь \texttt{\textbackslash label} стоит перед \texttt{\textbackslash caption} (ошибка специально).}
+\end{figure}
+
+Теперь сравни ссылки:
+Правильная: рисунок~\ref{fig:linewidth}. \\
+Неправильная (посмотри, какой номер подставится): рисунок~\ref{fig:wronglabel}.
+
+\subsection{10) Метка у формулы: внутри окружения и после него}
+\begin{equation}
+e^{i\pi}+1 = 0
+\label{eq:inside}
+\end{equation}
+
+Ссылка (правильно): формула~\ref{eq:inside}.
+
+А теперь ставим метку \emph{после} окружения (ошибка специально):
+
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
+\label{eq:outside} 
+
+Ссылка (посмотри, что получится): формула~\ref{eq:outside}.
+
+\end{document}

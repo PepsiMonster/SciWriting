@@ -1,0 +1,159 @@
+\documentclass[a4paper,12pt]{article}
+% For the \textwidth vs \linewidth experiment, compile once with this instead:
+% \documentclass[a4paper,12pt,twocolumn]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{float}      % for [H]
+\usepackage[hidelinks]{hyperref}
+
+% Put your images in a subfolder (recommended):
+% Create a folder named "figs" next to this .tex file.
+\graphicspath{{figs/}}
+
+\begin{document}
+
+\section{Including graphics}
+This document is a sandbox for Exercise 4.
+
+\subsection{1) A centered image (basic)}
+Below is a centered image. Replace \texttt{example-image} with your own file
+(e.g.\ \texttt{myplot.pdf} or \texttt{photo.jpg}) placed in \texttt{figs/}.
+
+\begin{center}
+\includegraphics[height=2cm]{example-image}
+\end{center}
+
+\section{Altering the appearance of images}
+\subsection{2) Height vs width}
+Same image, two different ways to size it:
+
+\begin{center}
+\includegraphics[height=0.35\textheight]{example-image}
+\end{center}
+
+Some text in between.
+
+\begin{center}
+\includegraphics[width=0.55\textwidth]{example-image}
+\end{center}
+
+\subsection{3) Scale and rotation}
+\begin{center}
+\includegraphics[scale=0.6, angle=15]{example-image}
+\end{center}
+
+\subsection{4) Trimming and clipping}
+The values in \texttt{trim} are \emph{left bottom right top}.
+Try changing them and recompiling.
+
+\begin{center}
+\includegraphics[clip, trim=20 10 80 40, width=0.6\textwidth]{example-image}
+\end{center}
+
+\section{Making images float}
+\subsection{5) Floats with different placement specifiers}
+We add filler text so floats have a reason to move.
+
+\lipsum[1-3]
+
+This is the \emph{test location} in the source.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-a}
+  \caption{A float with \texttt{[ht]} placement.}
+  \label{fig:ht}
+\end{figure}
+
+\lipsum[4-6]
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-b}
+  \caption{A float with \texttt{[tb]} placement.}
+  \label{fig:tb}
+\end{figure}
+
+\lipsum[7-9]
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-c}
+  \caption{A float with \texttt{[p]} placement (float-only page).}
+  \label{fig:p}
+\end{figure}
+
+\lipsum[10-11]
+
+\subsection{6) Forcing exact placement with \texttt{[H]}}
+The option \texttt{[H]} (from the \texttt{float} package) tries to place the figure
+exactly “here”. It can create large whitespace, so it is not always recommended.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{example-image}
+  \caption{A float forced \texttt{[H]} (absolutely here).}
+  \label{fig:H}
+\end{figure}
+
+\section{Cross-referencing}
+\subsection{7) Referencing figures}
+See Figure~\ref{fig:ht}, Figure~\ref{fig:tb}, Figure~\ref{fig:p}, and Figure~\ref{fig:H}.
+
+If you see \textbf{??} the first time, compile again. Cross-references usually need
+at least \(2\) runs.
+
+\subsection{8) \texttt{\textbackslash textwidth} vs \texttt{\textbackslash linewidth}}
+The difference is easiest to notice with \texttt{twocolumn}. Compile once without
+\texttt{twocolumn}, then enable it in the \texttt{\textbackslash documentclass} line and compare.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{example-image}
+  \caption{Width set relative to \texttt{\textbackslash textwidth}.}
+  \label{fig:textwidth}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{example-image}
+  \caption{Width set relative to \texttt{\textbackslash linewidth}.}
+  \label{fig:linewidth}
+\end{figure}
+
+\section{Label placement experiments}
+\subsection{9) What if \texttt{\textbackslash label} is before \texttt{\textbackslash caption}?}
+Correct placement is \emph{after} (or inside) \texttt{\textbackslash caption}.
+Below we intentionally do it wrong to observe the result.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.55\textwidth]{example-image}
+  \label{fig:wronglabel} 
+  \caption{This figure has \texttt{\textbackslash label} before \texttt{\textbackslash caption} (wrong on purpose).}
+\end{figure}
+
+Now compare references:
+Correct one: Figure~\ref{fig:linewidth}.  
+Wrong one (watch what number it picks): Figure~\ref{fig:wronglabel}.
+
+\subsection{10) Equation labels: inside vs after the environment}
+\begin{equation}
+e^{i\pi}+1 = 0
+\label{eq:inside}
+\end{equation}
+
+Reference (correct): Equation~\ref{eq:inside}.
+
+Now we label \emph{after} the equation environment (wrong on purpose):
+
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
+\label{eq:outside} 
+
+Reference (watch what happens): Equation~\ref{eq:outside}.
+
+\end{document}

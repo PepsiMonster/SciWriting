@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+\geometry{margin=2.5cm}
+
+\title{Report on \LaTeX{} installation and first document compilation}
+\author{Lobov Mikhail Sergeevich}
+\date{September 26, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Goal}
+
+The goal of this work is to install the TeX Live distribution on Windows~11
+using the Chocolatey package manager and to verify that the system works
+correctly by compiling a simple \LaTeX{} document from the command line.
+
+\section*{Software}
+
+\begin{itemize}
+  \item Operating system: Windows~11.
+  \item Package manager: Chocolatey.
+  \item \LaTeX{} distribution: TeX Live~2025
+        (\url{https://www.tug.org/texlive/}).
+  \item Text editor: Visual Studio Code.
+\end{itemize}
+
+\section*{Procedure}
+
+\begin{enumerate}
+  \item PowerShell was started with administrator privileges.
+  \item TeX Live was installed via Chocolatey using the command
+        \texttt{choco install texlive}.
+  \item After the installation finished, the availability of the compiler
+        was checked with \texttt{pdflatex\ --version}. The output reports
+        TeX Live~2025, which confirms a successful installation.
+  \item A file \texttt{main.tex} with minimal \LaTeX{} structure
+        (\texttt{\textbackslash documentclass},
+        \texttt{\textbackslash begin\{document\}} and
+        \texttt{\textbackslash end\{document\}}) was created in the directory
+        \texttt{C:\textbackslash Users\textbackslash kotof\textbackslash Study\textbackslash SciWriting}.
+  \item Compilation of the document was started from the integrated
+        VS~Code terminal using the command \texttt{pdflatex main.tex}.
+  \item According to the compiler output, the file \texttt{main.pdf} was
+        generated without errors (see Fig.~\ref{fig:terminal-en}).
+\end{enumerate}
+
+During the first attempt to compile an almost empty file \texttt{test.tex},
+\LaTeX{} switched to interactive mode and complained about an incomplete
+document structure. After adding the standard document skeleton, the
+compilation process finished successfully.
+
+\section*{Results}
+
+As a result of the work:
+
+\begin{itemize}
+  \item The current TeX Live~2025 distribution is installed on the machine.
+  \item The \texttt{pdflatex} compiler is available from PowerShell and the
+        VS~Code terminal.
+  \item A test document \texttt{main.tex} was successfully compiled into
+        \texttt{main.pdf}.
+\end{itemize}
+
+\section*{Conclusion}
+
+The objective of the task has been achieved: \LaTeX{} is correctly installed
+and ready to be used for further assignments in scientific writing and
+typesetting. A first working example of document compilation from the
+command line has been obtained, which allows focusing on the content
+(formulas, figures, bibliography) in the next tasks.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figure.png}
+  \caption{Output of the \texttt{pdflatex main.tex} command in the terminal.}
+  \label{fig:terminal-en}
+\end{figure}
+
+\end{document}
