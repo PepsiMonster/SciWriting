@@ -1,88 +1,13 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass{article}
 
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[main=russian,english]{babel}
-\usepackage{graphicx}
-\usepackage{geometry}
-\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage[russian,english]{babel}
 
-\geometry{margin=2.5cm}
 
-\title{Отчёт по установке \LaTeX{} и первой компиляции документа}
-\author{Лобов Михаил Сергеевич}
-\date{26 сентября 2025~г.}
+\babelfont{rm}{Times New Roman}
+\babelfont{sf}{Arial}
+\babelfont{tt}{Consolas}
 
 \begin{document}
-
-\maketitle
-
-\section*{Цель работы}
-
-Установить дистрибутив TeX Live под Windows~11 с помощью менеджера пакетов
-Chocolatey и проверить работоспособность системы, выполнив компиляцию
-простого \LaTeX-документа из командной строки.
-
-\section*{Используемое программное обеспечение}
-
-\begin{itemize}
-  \item Операционная система: Windows~11.
-  \item Менеджер пакетов: Chocolatey.
-  \item Дистрибутив \LaTeX: TeX Live~2025
-        (\url{https://www.tug.org/texlive/}).
-  \item Редактор исходного текста: Visual Studio Code.
-\end{itemize}
-
-\section*{Ход работы}
-
-\begin{enumerate}
-  \item Был открыт PowerShell от имени администратора.
-  \item Установка TeX Live выполнена командой
-        \texttt{choco install texlive}.
-  \item После завершения установки проверена доступность компилятора
-        командой
-        \texttt{pdflatex\ --version}. В выводе команды указано, что
-        используется TeX Live~2025, что подтверждает корректную установку.
-  \item В каталоге \texttt{C:\textbackslash Users\textbackslash kotof\textbackslash Study\textbackslash SciWriting}
-        создан файл \texttt{main.tex} с минимальной структурой
-        \LaTeX-документа (\texttt{\textbackslash documentclass},
-        \texttt{\textbackslash begin\{document\}} и
-        \texttt{\textbackslash end\{document\}}).
-  \item В интегрированном терминале VS~Code запущена компиляция документа
-        командой \texttt{pdflatex main.tex}.
-  \item Из вывода компилятора видно, что без ошибок был создан файл
-        \texttt{main.pdf} (см. рис.~\ref{fig:terminal}).
-\end{enumerate}
-
-При первом запуске компиляции пустого файла \texttt{test.tex} \LaTeX{}
-перешёл в режим ожидания ввода команд и выдал сообщение о незавершённой
-структуре документа. После добавления стандартного каркаса
-документа компиляция стала проходить успешно.
-
-\section*{Результаты}
-
-В результате проделанной работы:
-
-\begin{itemize}
-  \item На рабочей станции установлен актуальный дистрибутив TeX Live~2025.
-  \item Компилятор \texttt{pdflatex} доступен из PowerShell и терминала VS~Code.
-  \item Успешно скомпилирован тестовый документ \texttt{main.tex} в файл
-        \texttt{main.pdf}.
-\end{itemize}
-
-\section*{Выводы}
-
-Цель работы достигнута: система \LaTeX{} корректно установлена и готова
-к использованию для выполнения последующих заданий по научному письму
-и вёрстке документов. Получен первый рабочий пример компиляции простого
-документа из командной строки, что позволит в дальнейшем сосредоточиться
-на содержательной части заданий (формулы, рисунки, библиография).
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.95\linewidth]{figure.png}
-  \caption{Output of the \texttt{pdflatex main.tex} command in the terminal.}
-  \label{fig:terminal-en}
-\end{figure}
-
+Привет, мир!
 \end{document}
