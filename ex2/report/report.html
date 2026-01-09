@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Цель работы</h1>
+<p>Изучить базовую структуру LaTex документа (преамбула и тело) и научиться компилировать <code>.tex</code> в PDF с помощью <code>pdflatex</code>, а также освоить работу со спецсимволами и сносками.</p>
+<h1 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">Задание</h1>
+<ol>
+<li>Создать простой LaTex документ и разработать его структуру:
+<ol>
+<li>преамбула</li>
+<li>тело окружения <code>\begin{...}</code></li>
+</ol>
+</li>
+<li>Добавить комментарии, сноску и сделать несколько абзацев</li>
+<li>Проверить работу жесткого неразрывного пробела</li>
+<li>Вывести в документе набор спецсимволов LaTex и способы их печати</li>
+<li>Подготовить русскую и английскую версии исходников и результатов компиляции</li>
+<li>Опубликовать результаты в репозитории GitHub</li>
+</ol>
+<h1 id="%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Теоретическое введение</h1>
+<p>LaTeX — это система компьютерной вёрстки, в которой документ создаётся как текстовый файл с разметкой-командами. В отличие от WYSIWYG-редакторов, LaTeX описывает <em>структуру</em> документа (разделы, абзацы, списки, таблицы), а итоговый вид формируется на этапе компиляции в PDF.</p>
+<p>Базовая структура LaTex документа включает:</p>
+<ul>
+<li><strong>Преамбулу</strong>, все то, что идет до <code>\begin{document}</code></li>
+</ul>
+<pre class="hljs"><code><div>\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+</div></code></pre>
+<ul>
+<li><strong>Тело документа</strong>, все то, что идет между <code>\begin{document}</code> и <code>\end{document}</code></li>
+</ul>
+<pre class="hljs"><code><div>\begin{document}
+
+...
+
+\end{document}
+</div></code></pre>
+<p>Абзацы в LaTex отделяются <strong>пустой строкой</strong>. Спецсимволы (<code>\</code>, <code>{</code>, <code>}</code>, <code>%</code>, <code>$</code>, <code>&amp;</code>, <code>#</code>, <code>_</code> и др.) имеют служебное значение и печатаются с экранированием (например, <code>\%</code>, <code>\{</code>), либо командами (<code>\textbackslash</code>, <code>\textasciitilde</code>).</p>
+<h1 id="%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Выполнение лаборатной работы</h1>
+<h2 id="1-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0">1. Создание минимального документа</h2>
+<p>Был создан <code>main2.tex</code> (английская версия) со структурой:</p>
+<pre class="hljs"><code><div>\documentclass{article}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+Hey world!
+This is a second document.
+\end{document}
+</div></code></pre>
+<p>Для выполнения компиляции использовалась команда <code>pdflate main2.tex</code>. В результате получен файл main2.pdf, а также main2.log и main2.aux.</p>
+<h2 id="2-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%B8-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">2. Структура документа и окружения</h2>
+<p>Документ был расширен до примера с комментариями, сноской и 2мя абзацами. Также показано, что окружения должны корректно закрываться: для каждого \begin{x} должен быть \end{x}, причём при вложенности закрытие идёт в обратном порядке.</p>
+<h2 id="3-%D0%BD%D0%B5%D1%80%D0%B0%D0%B7%D1%80%D1%8B%D0%B2%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB">3. Неразрывный пробел</h2>
+<p>Добавлен пример hard space ~ для предотвращения переноса строки межлу связанными фрагментами текста.</p>
+<h2 id="4-%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B-latex">4. Специальные символы LaTex</h2>
+<p>В документ добавлен список наиболее часто используемых спецсимволов и способов их печати:</p>
+<pre class="hljs"><code><div>\begin{itemize}
+  \item Curly braces: \{ and \}
+  \item Dollar sign: \$ (so we can show money like \$10)
+  \item Percent sign: \% (otherwise it starts a comment)
+  \item Ampersand: \&amp; (otherwise used in tables)
+  \item Hash: \# 
+  \item Underscore: \_ (often used in math, so needs escaping in text)
+  \item Backslash: \textbackslash
+  \item Caret: \textasciicircum
+  \item Tilda: \textasciitilde
+\end{itemize}
+</div></code></pre>
+<h2 id="5-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0">5. Русская версия документа</h2>
+<p>Для русской версии документа подготовлен файл main2_ru.tex со следующими настройками локализации:</p>
+<pre class="hljs"><code><div>\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+</div></code></pre>
+<p>Это обеспечивает корректный набор кирилицы в pdflatex.</p>
+<h1 id="%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%B0">Формирование отчета</h1>
+<p>Подготовлены исходные файлы: main2.tex, main2_ru.tex.</p>
+<p>Выполнена компиляция в PDF: main2.pdf, main2_ru.pdf.</p>
+<p>Сформирован отчёт в Markdown и презентация в формате Marp.</p>
+<p>Материалы опубликованы в репозитории.</p>
+<h1 id="%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">Выводы</h1>
+<p>В ходе работы освоены базовые принципы LaTex:</p>
+<ul>
+<li>структура документа</li>
+<li>разделение на преамбулу и тело</li>
+<li>правила создания абзацев</li>
+<li>использование окружений, комментариев и сносок</li>
+</ul>
+<p>Отдельно изучены способы печати спецсимволов и применение неразрывного пробела ~. Подготовлены русская и английская версия исодников и результатов компиляции, а также оформленны материалы для публикации на GitHub.</p>
+<h1 id="%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">Список литературы</h1>
+<p>LearnLaTex: https://www.learnlatex.org/
+LaTex Project: https://www.latex-project.org/
+Tex Live: https://www.tug.org/texlive/</p>
+<h1 id="%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Приложения</h1>
+<p>Репозиторий с материалами:
+https://github.com/PepsiMonster/SciWriting/tree/main/ex2</p>
+
+</body>
+</html>

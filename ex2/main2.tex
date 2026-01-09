@@ -3,23 +3,17 @@
 
 \begin{document}
 
-Hey world!
+Hello world!
 
-This is a first document.
-Here   are     some      extra spaces --- but in the PDF they collapse to single spaces.
+This is the firts real document. Here are some big spaces --- but in pdf the collapse in a single space. 
 
-This is a new paragraph. Notice the blank line above: it starts a new paragraph.
+This is a new paragraph. Here we will try non-breaking space (hard space). \texttt{\string~}:
+The hard space is real.
 
-Now we try a non-breaking space (hard space) using \texttt{\string~}:
-Mr.~Smith cannot break across lines.
-Also useful for things like p.~10 or fig.~2 later.
-
-Let's force some potential line breaks by using a longer sentence:
-This paragraph is intentionally long so LaTeX may decide to break lines in different places depending on page width and the words that appear near the end of each line.
+Let's force some potential line breks. This paragraph is intentionally long so LaTeX may decide to break lines in different places depending on page width and the words that appear near the end of each line.
 
 \bigskip
-Now let's print special characters (they normally have special meaning in LaTeX):
-
+Now we try to print some special charachters.
 \begin{itemize}
   \item Curly braces: \{ and \}
   \item Dollar sign: \$ (so we can show money like \$10)
@@ -29,9 +23,9 @@ Now let's print special characters (they normally have special meaning in LaTeX)
   \item Underscore: \_ (often used in math, so needs escaping in text)
   \item Backslash: \textbackslash
   \item Caret: \textasciicircum
-  \item Tilde: \textasciitilde
+  \item Tilda: \textasciitilde
 \end{itemize}
 
-This sentence has a footnote\footnote{This is the footnote text.} to confirm commands work in the body.
+This is going to be our footnote text\footnote{This is the footnote text in person}. 
 
 \end{document}

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.21)  19 DEC 2025 09:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.19)  9 JAN 2026 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/kotof/Study/SciWriting/ex2/main2.tex
-(c:/Users/kotof/Study/SciWriting/ex2/main2.tex
+**main2.tex
+(./main2.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-11-06>
+L3 programming layer <2025-11-14>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (c:/texlive/2025/texmf-dist/tex/latex/base/size12.clo
@@ -30,7 +30,7 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count283
 )
-No file main2.aux.
+(./main2.aux)
 \openout1 = `main2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -48,31 +48,31 @@ LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 35.
+(Font)              <12> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 35.
+(Font)              <8> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 35.
+(Font)              <6> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 35.
+(Font)              <7> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 35.
-[1
+(Font)              <5> on input line 29.
+ [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main2.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-11-06>
+L3 programming layer <2025-11-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 681 strings out of 468952
- 10197 string characters out of 5461133
- 438736 words of memory out of 5000000
- 29413 multiletter control sequences out of 15000+600000
+ 682 strings out of 468952
+ 10097 string characters out of 5461133
+ 438733 words of memory out of 5000000
+ 29414 multiletter control sequences out of 15000+600000
  634166 words of font info for 55 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
- 35i,8n,38p,216b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 35i,8n,38p,238b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.
 600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0
 700.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/e
@@ -80,9 +80,9 @@ crm0800.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/
 ec/tcrm1200.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ectt1200.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/j
 knappen/ec/ecrm1200.600pk>
-Output written on main2.pdf (1 page, 24154 bytes).
+Output written on main2.pdf (1 page, 22623 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
