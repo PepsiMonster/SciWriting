@@ -1,34 +1,34 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass [a4paper,12pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
-\usepackage{amsfonts}   % for \mathbb
-\usepackage{bm}         % for \bm
-\usepackage{mathtools}  % loads amsmath + extras
+\usepackage{amssymb}      % Добавлено для \mathbb
+\usepackage{bm}
+\usepackage{mathtools}
 
-% Differential operator (upright d). For italic d use: \mathop{}\!d
-\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}  % Исправлено
 
 \begin{document}
 
 \section*{Exercise: Math mode}
 
 \subsection*{1) Inline math}
-Inline formula: \( y = mx + c \).
-Another one: \( 5^{2} = 3^{2} + 4^{2} \).
-Superscripts and subscripts: \( a^{b} \) and \( a_{b} \), and also \( x_{n}^{2} \).
+Inline formula: \(y= mx+c\).
+Another example: \(5^{2}= 3^{2} + 4^{1000}\).
+Superscripts and subscripts: \(a^{b}\) or \(a_{b}\) and \(x_{n}^{1000}\).
 
-Note: in math mode spaces are ignored, so \( a\;\;b \) and \( ab \) are very similar,
-and for “manual” spacing there are commands such as \( \, \), \( \; \), \( \quad \).
+Spaces does not register in this mode. For manual spacing use \( \, \), \( \; \), \( \quad \).
 
 \subsection*{2) Display math}
-The same formula, but on its own line:
-\[
-y = mx + c
-\]
-The text continues after the display formula as a normal paragraph.
 
-\subsection*{3) Greek letters (lower/upper case)}
+The same formula can be showcased in the middle of the page on its own line:
+\[
+y = kx + c 
+\]
+
+Text will go on after this notation as normal. 
+
+\subsection*{3) Greek letters}
 For example: \( \alpha, \beta, \gamma, \theta, \lambda, \pi, \omega \) and \( \Gamma, \Delta, \Theta, \Lambda, \Pi, \Omega \).
 
 \subsection*{4) Integral + neatly typeset \texttt{dx}}
@@ -36,32 +36,33 @@ For example: \( \alpha, \beta, \gamma, \theta, \lambda, \pi, \omega \) and \( \G
 \int_{-\infty}^{+\infty} e^{-x^2} \diff x
 \]
 
-\subsection*{5) Numbered equation}
+\subsection*{5) Numbered equations}
 \begin{equation}
-(x+y)(x-y)=x^{2}-y^{2}
+    (x+y)(x-y)=x^{2}-y^{2}
 \end{equation}
 
-\subsection*{6) amsmath: alignment (align) and text inside math}
+\subsection*{6) amsmath: alignment and text inside math}
 \begin{align}
 Q_{n,0} &= 1, \quad Q_{0,k} = [k=0]; \\
 Q_{n,k} &= Q_{n-1,k}+Q_{n-1,k-1}+\binom{n}{k},
 \quad \text{for } n,k>0.
 \end{align}
 
-\subsection*{7) Matrices}
+\subsection*{7) Matrices}  % Исправлено: была опечатка в слове Matricies
 \[
 \begin{pmatrix}
-a & b & c \\
-d & e & f
+    a & b & c \\
+    d & e & f
 \end{pmatrix}
 \quad
 \begin{bmatrix}
-1 & 2 \\
--5 & -6
+    1 & 2 \\
+    -5 & -6
 \end{bmatrix}
 \]
 
 \subsection*{8) Fonts in math mode + nesting}
+
 Compare:
 \[
 \text{``size''} \neq \mathit{size} \neq \mathrm{size} \neq \mathbf{size}
@@ -76,18 +77,16 @@ Individual styles:
 \mathbb{R}\ \mathbb{N}\ \mathbb{Z}
 \]
 
-Now nesting (compile and see what actually changes):
+Now nesting will be present after the compilation is complete. 
 \[
 \mathbf{\mathsf{A}} \quad \mathsf{\mathbf{A}} \quad \bm{\alpha} \quad \mathbf{\alpha}
 \]
-Hint: \( \mathbf{\alpha} \) typically does not bold Greek letters, while \( \bm{\alpha} \) does.
 
 \subsection*{9) Two more environments: gather and multline}
 \begin{gather}
 P(x)=ax^{5}+bx^{4}+cx^{3}+dx^{2}+ex+f\\
 x^2+x=10
 \end{gather}
-
 \begin{multline*}
 (a+b+c+d)x^{5}+(b+c+d+e)x^{4} \\
 +(c+d+e+f)x^{3}+(d+e+f+a)x^{2}+(e+f+a+b)x\\
