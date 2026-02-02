@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.19)  22 DEC 2025 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.19)  2 FEB 2026 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,35 +305,40 @@ Package babel Info: 'russian' activates 'russian' shorthands.
 )
 \openout1 = `main6_ru.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Info: Redefining \th on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Info: Redefining \th on input line 31.
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-40.
+33.
 
 (c:/texlive/2025/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Font shape `T2A/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 40.
+(Font)              Font shape `T2A/cmtt/m/n' tried instead on input line 33.
+
+Overfull \hbox (3.0145pt too wide) in paragraph at lines 33--33
+[]\T2A/cmr/bx/n/14.4 Библиография с \T2A/cmtt/m/n/14.4 natbib \T2A/cmr/bx/n/14.
+4 (ра-бо-чий про-цесс Bibtex) 
+ []
 
 
 Package natbib Warning: Citation `NotInDatabase' on page 1 undefined on input l
-ine 55.
+ine 49.
 
 (./main6_ru.bbl
 Underfull \hbox (badness 1082) in paragraph at lines 9--12
@@ -361,7 +366,7 @@ Here is how much of TeX's memory you used:
  31367 multiletter control sequences out of 15000+600000
  634837 words of font info for 50 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
- 40i,5n,44p,263b,322s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 40i,5n,44p,236b,322s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lati1000.60
 0pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1000.
 600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt100
@@ -370,9 +375,9 @@ Here is how much of TeX's memory you used:
 x1200.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/l
 att1440.600pk> <c:/Users/kotof/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a
 /labx1440.600pk>
-Output written on main6_ru.pdf (1 page, 63265 bytes).
+Output written on main6_ru.pdf (1 page, 60408 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
+ 234 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)

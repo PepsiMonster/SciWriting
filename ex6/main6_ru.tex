@@ -1,13 +1,14 @@
 \documentclass{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} % для pdfLaTeX; при LuaLaTeX можно убрать
+\usepackage[utf8]{inputenc} 
 \usepackage[russian]{babel}
 \usepackage{natbib}
 
-% Создаём .bib-файл изнутри .tex (для автономности)
 \begin{filecontents*}{learnlatex.bib}
+
 @article{Thomas2008,
-  author  = {Thomas, Christine M. and Liu, Tianbiao and Hall, Michael B. and Darensbourg, Marcetta Y.},
+  author =   {Thomas, Christine M. and Liu, Tianbiao and Hall,
+  Michael B. and Darensbourg, Marcetta Y.},
   title   = {Series of Mixed Valent {Fe(II)Fe(I)} Complexes That Model the {H(OX)} State of [{FeFe}]Hydrogenase:
              Redox Properties, Density-Functional Theory Investigation, and Reactivity with Extrinsic {CO}},
   journal = {Inorg. Chem.},
@@ -25,35 +26,28 @@
   year      = {1995},
 }
 
-% Новая запись для упражнения (создать новую запись в базе)
-@book{Lamport1994,
-  author    = {Leslie Lamport},
-  title     = {LaTeX: A Document Preparation System},
-  publisher = {Addison-Wesley},
-  year      = {1994},
-  edition   = {2},
-}
 \end{filecontents*}
 
 \begin{document}
 
-\section*{Упражнение 6.9 --- Библиография с \texttt{natbib} (рабочий процесс BibTeX)}
+\section*{Библиография с \texttt{natbib} (рабочий процесс Bibtex)}
 
 \subsection*{1) Базовые цитирования (текстовые и в скобках)}
-Пример по математике взят из \citet{Graham1995}, а пример по химии --- из \citet{Thomas2008}.
+Пример по математике взят из \citet{Graham1995}, а пример по химии взят из \citet{Thomas2008}.
 
 Примеры ссылок в скобках: \citep{Graham1995} и затем \citep[p.~56]{Thomas2008}.
 
-Ссылка с коротким примечанием и диапазоном страниц: \citep[См.][pp.~45--48]{Graham1995}.
+Ссылки с коротким примечанием и дипазоном страниц: \citep[См.] [pp.~45--48]{Graham1995}.
 
-Несколько источников в одной ссылке: \citep{Graham1995,Thomas2008}.
+Несколько источников в одной ссылке: \citep{Graham1995,Thomas2008}
 
 \subsection*{2) Новая запись и новая ссылка}
-Вот ссылка на новую запись, которую мы добавили в базу: \citet{Lamport1994}.
+Вот ссылка на новую запись, которую мы добавляем в базу:
+\citet{Lamport1994}.
 
-\subsection*{3) Ссылка на источник, которого нет в базе}
+\subsection*{3)Ссылка на источник, которого нет в базе}
 Этого ключа нет в \texttt{learnlatex.bib}: \citep{NotInDatabase}.
-(Должно появиться предупреждение, а в документе ссылка обычно отображается как \texttt{?}.)
+(Должно появиться предупреждение, а в документе ссылка обычно отображается как \texttt{?}.) 
 
 \bibliographystyle{plainnat}
 \bibliography{learnlatex}
