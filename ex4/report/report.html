@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%964">Лабораторная работа №4</h1>
+<h1 id="%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Цель работы</h1>
+<p>Изучить основы подключения графики в LaTex с использованием пакета <code>graphicx</code>, освоить управлние размером/поворотом/обрезной изображений , работу с плаваюзщеми объектами (floats), а также механизмамаи перекрестных ссылок <code>\label и /ref</code> и влияние параметров \textwidth и \linewidth.</p>
+<h1 id="%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">Задание</h1>
+<ol>
+<li>
+<p>Подключить внешнее изображение в документ LaTeX, заменив демонстрационные изображения на собственное.</p>
+</li>
+<li>
+<p>Исследовать параметры <code>height</code>, <code>width</code>, <code>scale</code>, <code>angle</code>, <code>trim</code> и <code>clip</code> в <code>\includegraphics</code>.</p>
+</li>
+<li>
+<p>Сформировать «длинный» пример с использованием <code>lipsum</code> и проверить работу float’ов с позиционными спецификаторами <code>[h]</code>, <code>[t]</code>, <code>[b]</code>, <code>[p]</code>, а также принудительным <code>[H]</code>.</p>
+</li>
+<li>
+<p>Сравнить поведение размеров рисунка при задании относительно <code>\textwidth</code> и <code>\linewidth</code> (в том числе в режиме <code>twocolumn</code>).</p>
+</li>
+<li>
+<p>Проверить работу перекрёстных ссылок и выяснить, сколько прогонов компиляции требуется для корректной подстановки номеров.</p>
+</li>
+<li>
+<p>Экспериментально проверить, что произойдёт при размещении <code>\label</code> <strong>до</strong> <code>\caption</code> у рисунка и при размещении <code>\label</code> <strong>после</strong> <code>\end{equation}</code> у формулы.</p>
+</li>
+<li>
+<p>Подготовить отчёт и презентацию, опубликовать материалы в репозитории и оформить ссылки на скринкасты.</p>
+</li>
+</ol>
+<h1 id="%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Теоретическое введение</h1>
+<p>LaTeX поддерживает подключение внешней графики через пакет <code>graphicx</code>, который добавляет команду <code>\includegraphics</code>. В качестве исходных форматов обычно используются PNG/JPG (растровые) и PDF (векторный). При задании размера через <code>width</code> или <code>height</code> LaTeX автоматически сохраняет пропорции изображения.</p>
+<p>Для технических документов важна концепция «плавающих» объектов (floats): LaTeX может переносить рисунки и подписи на более удачное место, чтобы избежать больших пустых областей и улучшить верстку. Управление размещением выполняется через позиционные спецификаторы <code>[h]</code>, <code>[t]</code>, <code>[b]</code>, <code>[p]</code>. Пакет <code>float</code> добавляет спецификатор <code>[H]</code>, который пытается поставить рисунок строго «здесь», но может ухудшить внешний вид документа за счёт больших разрывов.</p>
+<p>Для технических документов важна концепция «плавающих» объектов (floats): LaTeX может переносить рисунки и подписи на более удачное место, чтобы избежать больших пустых областей и улучшить верстку. Управление размещением выполняется через позиционные спецификаторы <code>[h]</code>, <code>[t]</code>, <code>[b]</code>, <code>[p]</code>. Пакет <code>float</code> добавляет спецификатор <code>[H]</code>, который пытается поставить рисунок строго «здесь», но может ухудшить внешний вид документа за счёт больших разрывов.</p>
+<p>Разница между <code>\textwidth</code> и <code>\linewidth</code> особенно заметна в режиме <code>twocolumn</code>: <code>\textwidth</code> соответствует ширине текстового блока страницы, а <code>\linewidth</code> — текущей ширине строки (например, ширине колонки), поэтому одинаковый коэффициент может давать различный итоговый размер изображения.</p>
+<h1 id="%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Выполнение лабораторной работы</h1>
+<ol>
+<li>Подготовка структуры проекта:
+<ol>
+<li>созданы документы main4.tex и main4_ru.tex</li>
+<li>создана подпапка figs с графиком</li>
+</ol>
+</li>
+<li>Подключение пакетов и пути к изображениями до начала документа
+<ol>
+<li>В преамбуле подключены основные пакеты для работы с графиком, float и ссылками.</li>
+</ol>
+</li>
+</ol>
+<pre class="hljs"><code><div>   \usepackage{graphicx}
+   \usepackage{lipsum}
+   \usepackage{float}
+   \usepackage[hidelinks]{hyperref}
+
+   \graphicspath{{figs/}}
+</div></code></pre>
+<ol start="3">
+<li>Вставка изображения в документ</li>
+</ol>
+<pre class="hljs"><code><div>   \begin{center}
+
+     \includegraphics[height=2cm]{image.png}
+
+   \end{center}
+</div></code></pre>
+<p><img src="image.png" alt="alt text"></p>
+<ol start="4">
+<li>Эксперименты с параметрами размера и вида изображения
+<ol>
+<li>Сравнены способы задания размера через <code>height</code> и <code>width</code>.</li>
+<li>Проверены трансформации <code>scale</code> и <code>angle</code>.</li>
+<li>Выполнена обрезка с помощью <code>trim</code> и <code>clip</code> (формат <code>left bottom right top</code>).</li>
+</ol>
+</li>
+</ol>
+<p>Пример обрезки:</p>
+<pre class="hljs"><code><div>   \includegraphics[clip, trim=20 10 80 40, width=0.6\textwidth]{image.png}
+</div></code></pre>
+<ol start="5">
+<li>
+<p>Плавающие изображения и спецификаторы</p>
+<ul>
+<li>
+<p>Добавлен «рыбный» текст <code>lipsum</code>, чтобы у LaTeX появилось пространство для перестановки float’ов.</p>
+</li>
+<li>
+<p>Созданы рисунки с <code>[ht]</code>, <code>[tb]</code>, <code>[p]</code>, а также принудительное размещение <code>[H]</code>.</p>
+</li>
+<li>
+<p>Зафиксировано, что LaTeX может переносить рисунки на следующую страницу при нехватке места, особенно при крупных <code>width/height</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Сравнение <code>\textwidth &amp; \linewidth</code></p>
+<ul>
+<li>
+<p>Изображение масштабировалось относительно <code>\textwidth</code> и <code>\linewidth</code>.</p>
+</li>
+<li>
+<p>Документ компилировался в обычном режиме и в режиме <code>twocolumn</code> (включение параметра <code>twocolumn</code> в строке <code>\documentclass</code>).</p>
+</li>
+<li>
+<p>Отмечено, что в <code>twocolumn</code> относительный размер по <code>\linewidth</code> соответствует ширине текущей колонки и визуально отличается от масштаба по <code>\textwidth</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Перекрестные ссылки</p>
+<ul>
+<li>Добавлены метки рисунков через <code>\label{figs:...}</code> и ссылки на них с последюущим отображением <code>\ref{fig:...}</code> в тексте.</li>
+<li>Необходимо 2 прогона компиляции для правильного отображения</li>
+<li>Отдельно выполнена компиляция с неправильно размещенными <code>\label</code> перед <code>\caption</code>. Получен рисунок с невеным номером</li>
+<li>Аналогично при неправильной полседовательности <code>\equation</code> получает неправильный номер</li>
+</ul>
+</li>
+<li>
+<p>Компиляция</p>
+</li>
+</ol>
+<p>Для русской весии использована сборка pdflatex с кодировкой [<code>T2A</code>, язык <code>babel</code>]. Для перекрестных ссылок минимум 2 запуска:</p>
+<pre class="hljs"><code><div>pdflatex main4_ru.tex
+pdflatex main4_ru.tex
+
+pdflatex main4.tex
+pdflatex main4.tex
+</div></code></pre>
+<h1 id="%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%B0">Формирование отчета</h1>
+<ol>
+<li>Подготовлены исходный текст отчета в markdown и конвертированы в pdf и docx с использованием pandoc.</li>
+<li>Подгтовлена презентация и конвертирована в pdf</li>
+<li>Исторговые артефакты опубликованы в репозитории</li>
+</ol>
+<h1 id="%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">Выводы</h1>
+<p>В ходе работы были освоены базовые и расширенные способы встаки изображений в LaTex: управление размерами, поворотом и обрезкой, а также организация изображений в подпапке через <code>\graphicspath</code>. На практике подтверждено, что механизм работы float заметно влияет на итоговое расположение рисунков, а принудительное [H] может ухудшить внешний вид после верстки. Эксперименты показали различие между \textwidth и \linewidth в режиме twocolumn. Было проверено, что корректная работа перекрестных ссылок требует как минимум 2 прогонов компиляции, а неправильное рпасположение <code>\label</code> до <code>\caption</code> или после <code>\end{equation}</code> приводит к некорретным ссылкам.</p>
+<h1 id="%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">Список литературы</h1>
+<p>LearnLaTex: https://www.learnlatex.org/
+LaTex Project: https://www.latex-project.org/
+Tex Live: https://www.tug.org/texlive/</p>
+<h1 id="%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Приложения</h1>
+<p>Репозиторий с материалами:
+https://github.com/PepsiMonster/SciWriting/tree/main/ex4</p>
+
+</body>
+</html>
