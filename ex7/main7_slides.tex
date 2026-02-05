@@ -1,0 +1,146 @@
+%\documentclass[xcolor={svgnames}]{beamer}
+\documentclass[handout,xcolor={svgnames}]{beamer} чтобы компилировалось в 1 слайд
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\title{5G сети и распространение сигнала}
+\author{Лобов Михаил}
+\institute{RUDN University}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Что такое 5G?}
+\begin{block}{Кратко}
+    \begin{itemize}
+        \item<1-> 5G --- это мобильные сети нового поколения.
+        \item<2-> Используют более высокие частоты (например, около \(3{,}5\,\text{ГГц}\) и выше).
+        \item<3-> Цели: более высокая скорость, меньшие задержки,
+        поддержка большого числа устройств (IoT).
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Роль базовых станций}
+    \begin{itemize}
+        \item<4-> Соты стали меньше по размеру, но их стало больше.
+        \item<5-> Для покрытия города нужно плотное размещение станций.
+    \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Распространение сигнала в 5G}
+  \begin{block}{Основная идея}
+    Радиосигнал от вышки до пользователя ослабляется по пути:
+    \[
+      P_{\text{получ}} \propto \frac{1}{d^{\alpha}},
+    \]
+    где \(d\) — расстояние до вышки, а \(\alpha \approx 2\text{--}4\) —
+    коэффициент затухания.
+  \end{block}
+
+  \pause
+
+  \begin{block}{Особенности высоких частот}
+    \begin{itemize}
+      \item<2-> Сильнее поглощение стенами и препятствиями.
+      \item<3-> Сложнее покрыть большие площади одной вышкой.
+      \item<4-> Важна \alert{прямая видимость} (line-of-sight).
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Шум и отношение сигнал/шум}
+    \begin{block}{Шум}
+        \begin{itemize}
+            \item<1-> Тепловой шум приемника.
+            \item<2-> Помехи от электроники и других устройств.
+        \end{itemize}
+    \end{block}
+
+\pause
+
+\begin{block}{Signal to noise ratio}
+    \uncover<3->{Качество связи часто описывают величиной}
+    \[
+      \uncover<3->{\text{SNR}
+        = \frac{P_{\text{сигнала}}}{P_{\text{шума}}}.}
+    \]
+
+    \uncover<4->{Чем больше \(\text{SNR}\), тем надёжнее можно передавать данные.}
+    \uncover<5->{При маленьком \(\text{SNR}\) растёт вероятность ошибок,
+      приходится снижать скорость.}
+\end{block}
+\end{frame}
+
+\begin{frame}{Интерференция}
+    \frametitle{Интерференция в сотовой сети}
+
+    \begin{columns}
+        \begin{column}{0.55 \textwidth}
+            \begin{block}{Источники интерференции}
+                \begin{itemize}
+                    \item<1-> Соседние соты, работающие на той же или близкой частоте.
+                    \item<2-> Другие пользователи внутри одной соты.
+                    \item<3-> Отражения сигнала от зданий (\alert{многолучевость})
+                \end{itemize}
+            \end{block}
+
+\pause
+
+\begin{block}{Эффект}
+    \uncover<4-> {Сумма сигналов может как усиливать, так и ослаблять полезный сигнал.}
+    \uncover<5-> {Это приводит к провалам уровня сигнала или ошибкам при приёме.}
+\end{block}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+        \begin{center}
+        \uncover<2->{
+          \begin{tikzpicture}[scale=0.9]
+            \draw (0,0) node[circle,draw] {} node[above]{Вышка 5G};
+            \draw[->] (0,0) -- (2,1) node[right]{Пользователь A};
+            \draw[->] (0,0) -- (2,-1) node[right]{Пользователь B};
+          \end{tikzpicture}
+        }
+      \end{center}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Методы борьбы с шумом и помехами}
+    \begin{enumerate}
+        \item \uncover<1-> {\alert{Множественный доступ и планирование частот}
+        \\
+        Аккуратное распределение частот между сотами и пользователями.}
+        \item \uncover<2-> {\alert{MIMO \& Beamforming}
+        \\
+        Использование нескольких антенн для формирования узких лучей в сторону конкретного пользователя.}
+        \item \uncover<3-> {\alert{Малые соты}\\
+        Увеличение количества базовых станций, меньше расстояния, лучше \(\text{SNR}\)
+        --- более устойчивые схемы.}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Итоги}
+    \begin{block}{Основные идеи}
+        \begin{itemize}
+            \item<1-> 5G использует более высокие частоты, поэтому сигнал быстрее затухает с увеличением расстояния и чувствителен к препятствиям.
+            \item<2-> Качество связи определяется уровнем шума и интерференции - \(\text{SNR}\).
+            \item<3-> Для борьбы с проблемами применяются MIMO, beamforming, малые соты и умное управление ресурсами сети.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\end{document}
