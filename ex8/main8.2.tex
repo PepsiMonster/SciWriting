@@ -4,17 +4,14 @@
 \begin{document}
 \begin{tikzpicture}[scale=1.5]
 
-% оси
 \draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
-\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+\draw[->] (0,1.5) -- (0,1.5) node[above] {$y$};
 
-% начало координат
-\fill (0,0) circle (1pt) node[below left] {$O$};
+\fill(0,0) circle (1pt) node[below left] {$0$};
 
-% график
 \draw[blue, thick, domain=-3.14:3.14, samples=200]
-  plot (\x, {sin(\x r)})
-  node[right] {$y=\sin x$};
+plot(\x,{sin(\x r)})
+node[right] {$y=\sin x$};
 
 \end{tikzpicture}
 \end{document}

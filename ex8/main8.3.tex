@@ -1,34 +1,60 @@
-\documentclass[border=1cm]{standalone}
+\documentclass[border=2mm]{standalone}
 \usepackage{tikz}
 
-% Рекурсивный макрос: ковёр Серпинского
-\newcommand{\carpet}[4]{%
-  % #1 x, #2 y, #3 size, #4 depth
-  \ifnum#4=0
-    \fill (#1,#2) rectangle ++(#3,#3);
-  \else
+\newcommand{\carpetholes}[4]{%
+  \ifnum#4>0\relax
     \pgfmathsetmacro{\s}{#3/3}
-    \foreach \i in {0,1,2} {
-      \foreach \j in {0,1,2} {
-        \ifnum\i=1\relax
-          \ifnum\j=1\relax
-            % центральный квадрат пропускаем
+
+   
+    \pgfmathsetmacro{\hx}{#1 + \s}
+    \pgfmathsetmacro{\hy}{#2 + \s} % Центр
+    \fill[white] (\hx,\hy) rectangle ++(\s,\s);
+
+    
+    \foreach \ii in {0,1,2}{%
+      \foreach \jj in {0,1,2}{% 
+        \ifnum\ii=1\relax
+          \ifnum\jj=1\relax
+            % центр пропускаем
           \else
-            \carpet{#1+\i*\s}{#2+\j*\s}{\s}{\numexpr#4-1\relax}
+            \pgfmathsetmacro{\nx}{#1 + \ii*\s}
+            \pgfmathsetmacro{\ny}{#2 + \jj*\s}
+            \carpetholes{\nx}{\ny}{\s}{\numexpr#4-1\relax}%
           \fi
         \else
-          \carpet{#1+\i*\s}{#2+\j*\s}{\s}{\numexpr#4-1\relax}
+          \pgfmathsetmacro{\nx}{#1 + \ii*\s}
+          \pgfmathsetmacro{\ny}{#2 + \jj*\s}
+          \carpetholes{\nx}{\ny}{\s}{\numexpr#4-1\relax}%
         \fi
-      }
-    }
+      }%
+    }%
   \fi
+}
+
+\newcommand{\carpet}[4]{%
+\fill[black](#1,#2) rectangle++(#3,#3);
+\carpetholes{#1}{#2}{#3}{#4};
 }
 
 \begin{document}
 \begin{tikzpicture}
 
-% старт: x y size depth
-\carpet{0}{0}{6}{4}
+  \def\S{6}
+  \def\gap{1.2}
+
+  \foreach \d in {0,1,2,3,,4,5}{%
+  \pgfmathtruncatemacro{\col}{mod(\d,2)}
+  \pgfmathtruncatemacro{\row}{int(\d/2)}
+  \pgfmathsetmacro{\xshift}{\col*(\S+\gap)}
+  \pgfmathsetmacro{\yshift}{-\row*(\S+\gap)}
+  
+
+  \begin{scope}[shift={(\xshift,\yshift)}]
+    \draw[gray] (0,0) rectangle (\S,\S);
+    \carpet{0}{0}{\S}{\d}
+    \node[anchor=north west] at (0,\S) {\small depth = \d};
+  \end{scope}
+}
 
 \end{tikzpicture}
 \end{document}

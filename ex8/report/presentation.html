@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>presentation.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<hr>
+<p>marp: true
+theme: default
+paginate: true
+size: 16:9
+class: lead
+transition: slide
+math: mathjax
+backgroundColor: '#FFFDF6'
+color: '#1F1F1F'
+style: |
+/* Beaver цветовая схема с элементами Warsaw */</p>
+<p>:root {
+--primary-color: #8B1A1A;
+--secondary-color: #B22222;
+--accent-color: #D2691E;
+--light-bg: #FFFDF6;
+--dark-text: #1F1F1F;
+--code-bg: #F5F5F5;
+}</p>
+<p>/* СЛАЙДЫ ПО УМОЛЧАНИЮ - ПО ЛЕВОМУ КРАЮ <em>/
+section {
+background-color: var(--light-bg);
+font-family: 'Helvetica Neue', Arial, sans-serif;
+padding: 10px 10px;
+text-align: left;  /</em> ГЛОБАЛЬНОЕ ВЫРАВНИВАНИЕ ПО ЛЕВОМУ КРАЮ */
+}</p>
+<p>/* ОТДЕЛЬНЫЙ КЛАСС ДЛЯ ЦЕНТРИРОВАННЫХ СЛАЙДОВ */
+section.centered,
+section.center {
+text-align: center;
+}</p>
+<p>/* Для lead слайда оставляем центрирование */
+section.lead {
+text-align: center;
+padding-top: 80px;
+}</p>
+<p>/* Специальный класс для центрированных списков */
+section.centered ul,
+section.centered ol,
+section.center ul,
+section.center ol,
+section.lead ul,
+section.lead ol {
+display: inline-block;
+text-align: left;
+margin-left: auto;
+margin-right: auto;
+}</p>
+<p>/* Warsaw заголовки */
+h1 {
+color: var(--primary-color);
+border-bottom: 3px solid var(--secondary-color);
+padding-bottom: 15px;
+margin-bottom: 30px;
+font-size: 2.5em;
+font-weight: 700;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}</p>
+<p>h2 {
+color: var(--secondary-color);
+border-left: 5px solid var(--accent-color);
+padding-left: 15px;
+margin-top: 40px;
+font-weight: 600;
+}</p>
+<p>h3 {
+color: var(--accent-color);
+font-weight: 600;
+}</p>
+<p>/* Списки - всегда по левому краю */
+ul, ol {
+padding-left: 25px;
+text-align: left;
+}</p>
+<p>li {
+margin: 8px 0;
+}</p>
+<p>li::marker {
+color: var(--primary-color);
+}</p>
+<p>/* Остальные стили без изменений */
+p {
+line-height: 1.6;
+margin: 15px 0;
+}</p>
+<p>code {
+background-color: var(--code-bg);
+color: var(--primary-color);
+padding: 2px 6px;
+border-radius: 3px;
+font-family: 'Monaco', 'Consolas', monospace;
+font-size: 0.9em;
+border: 1px solid #E0E0E0;
+}</p>
+<p>pre {
+background-color: var(--code-bg);
+border: 1px solid #E0E0E0;
+border-left: 5px solid var(--accent-color);
+padding: 20px;
+border-radius: 0 5px 5px 0;
+overflow: auto;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}</p>
+<p>pre code {
+background-color: transparent;
+border: none;
+padding: 0;
+}</p>
+<p>blockquote {
+border-left: 4px solid var(--accent-color);
+background-color: #F9F9F9;
+padding: 15px 20px;
+margin: 20px 0;
+font-style: italic;
+}</p>
+<p>table {
+border-collapse: collapse;
+width: 100%;
+margin: 20px 0;
+box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}</p>
+<p>th {
+background-color: var(--primary-color);
+color: white;
+padding: 12px;
+text-align: left;
+}</p>
+<p>td {
+padding: 10px 12px;
+border-bottom: 1px solid #E0E0E0;
+}</p>
+<p>tr:nth-child(even) {
+background-color: #F8F8F8;
+}</p>
+<p>a {
+color: var(--secondary-color);
+text-decoration: none;
+border-bottom: 1px dotted var(--secondary-color);
+}</p>
+<p>a:hover {
+border-bottom: 2px solid var(--secondary-color);
+}</p>
+<p>hr {
+border: none;
+height: 2px;
+background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+margin: 40px 0;
+}</p>
+<p>section.lead h1 {
+color: var(--primary-color);
+border-bottom: 3px solid var(--secondary-color);
+padding-bottom: 15px;
+margin-top: 10px;  /* Уменьшить верхний отступ заголовка */
+margin-bottom: 20px;
+font-size: 2.5em;
+font-weight: 700;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}</p>
+<p>section.lead h2 {
+border-left: none;
+color: var(--accent-color);
+font-weight: 400;
+}</p>
+<p>footer {
+color: var(--accent-color);
+font-size: 0.9em;
+}</p>
+<p>.warsaw-box {
+background: white;
+border: 2px solid var(--primary-color);
+border-radius: 5px;
+padding: 20px;
+margin: 20px 0;
+box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}</p>
+<p>.alert {
+background-color: #FFF3CD;
+border-left: 5px solid var(--accent-color);
+padding: 15px;
+margin: 20px 0;
+}</p>
+<h2 id="highlight-background-color-rgba139-26-26-01padding-2px-5pxborder-radius-3px">.highlight {
+background-color: rgba(139, 26, 26, 0.1);
+padding: 2px 5px;
+border-radius: 3px;
+}</h2>
+<h1 id="%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%E2%84%968">Лабораторная работа №8</h1>
+<h2 id="%D0%B4%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B-%D0%B8-%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B8-tikz-%D0%B2-latex">Диаграммы и рисунки TikZ в LaTex</h2>
+<p><strong>Цель</strong>: освоить базовые приемы приемы TikZ для создания графиков.</p>
+<hr>
+<h1 id="%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Задачи работы</h1>
+<p>Подключить пакет TikZ, использовать класс standalone для отдельных рисунков.
+Выполненые следующие визуализации:</p>
+<ol>
+<li>Граф из 5 вершин</li>
+<li>График $y = \sin x$</li>
+<li>Ковер Серпинского</li>
+</ol>
+<p><em>Для каждого рисунка сгенерированы PDF</em></p>
+<hr>
+<h1 id="%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%B8-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5">Инструменты и окружение</h1>
+<p>Пакет: <code>tikz</code>
+Компиляция: <code>pdflatex</code>
+Отдельные рисунки: <code>\documentclass[border=...]{standalone}</code></p>
+<hr>
+<h1 id="%D0%B3%D1%80%D0%B0%D1%84-13">Граф (1/3)</h1>
+<p>Граф построен в полярных координатах по окружности.
+Задаем координаты:</p>
+<pre class="hljs"><code><div>\node[circle,draw] (A) at (90:\r) {A};
+\node[circle,draw] (B) at (18:\r) {B};
+\node[circle,draw] (C) at (-54:\r) {C};% узлы по окружности
+\node[circle,draw] (D) at (-126:\r) {D};
+\node[circle,draw] (E) at (162:\r) {E};
+</div></code></pre>
+<hr>
+<h1 id="%D0%B3%D1%80%D0%B0%D1%84-23">Граф (2/3)</h1>
+<p>Задаем ребра и строим диагонали</p>
+<pre class="hljs"><code><div>\draw (A) -- (B);
+\draw (B) -- (C);
+\draw (C) -- (D);% рёбра
+\draw (D) -- (E);
+\draw (E) -- (A);
+
+\draw[dashed] (A) -- (C);% диагонали
+\draw[dashed] (B) -- (D);
+</div></code></pre>
+<hr>
+<p><img src="image1.png" alt="alt text"></p>
+<hr>
+<h1 id="%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8-ysin-x">График функции $y=\sin x$</h1>
+<pre class="hljs"><code><div>\draw[-&gt;] (-3.5,0) -- (3.5,0) node[right] {$x$};
+
+\draw[-&gt;] (0,-1.5) -- (0,1.5) node[above] {$y$};
+
+  
+
+\draw[domain=-3.14:3.14, samples=200]
+
+  plot (\x, {sin(\x r)})
+
+  node[right] {$y=\sin x$};
+</div></code></pre>
+<hr>
+<h1 id="%D0%B7%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D1%8E-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">Замечания по построению графика</h1>
+<ul>
+<li>
+<p>Параметры <code>domain</code> и <code>samples</code> управляют диапазоном и гладкостью кривой.</p>
+</li>
+<li>
+<p>Суффикс <code>r</code> в <code>sin(\x r)</code> означает, что (\x) интерпретируется в радианах.</p>
+</li>
+<li>
+<p>Подписи добавляются обычными <code>node[...] { ... }</code> прямо на пути.</p>
+</li>
+</ul>
+<hr>
+<p><img src="image2.png" alt="alt text"></p>
+<hr>
+<h1 id="%D0%BA%D0%BE%D0%B2%D0%B5%D1%80-%D1%81%D0%B5%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE">Ковер Серпинского</h1>
+<p>Особенность LaTex такова, что рисовать каждый квадрат - переполнит память. Поэтому в упражнении использована рекурсия, так что квадраты на следующих итерациях просто копия квадратов на предыдущих итерациях.</p>
+<hr>
+<p><img src="image3.png" alt="alt text"></p>
+<hr>
+<h1 id="%D0%BA%D0%BE%D0%B4-%D0%B4%D0%BB%D1%8F-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B8-%D0%B8-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8">Код для создания рекурсии и оптимизации</h1>
+<pre class="hljs"><code><div>    \foreach \ii in {0,1,2}{%
+      \foreach \jj in {0,1,2}{% 
+        \ifnum\ii=1\relax
+          \ifnum\jj=1\relax
+        \else
+            \pgfmathsetmacro{\nx}{#1 + \ii*\s}
+            \pgfmathsetmacro{\ny}{#2 + \jj*\s}
+            \carpetholes{\nx}{\ny}{\s}{\numexpr#4-1\relax}%
+          \fi
+        \else
+          \pgfmathsetmacro{\nx}{#1 + \ii*\s}
+          \pgfmathsetmacro{\ny}{#2 + \jj*\s}
+          \carpetholes{\nx}{\ny}{\s}{\numexpr#4-1\relax}%
+</div></code></pre>
+<hr>
+<h1 id="%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0">Компиляция и проверка</h1>
+<p>Сборка PDF файлов. Один прогон компиляции, но 3 отдельных файла под каждый график.</p>
+<pre class="hljs"><code><div>pdflatex main8.<span class="hljs-number">1</span>.tex
+pdflatex main8.<span class="hljs-number">2</span>.tex
+pdflatex main8.<span class="hljs-number">3</span>.tex
+</div></code></pre>
+<hr>
+<h1 id="%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">Результаты работы</h1>
+<p><strong>Подготовлено:</strong></p>
+<ul>
+<li>Исходники презентаций main8.1.tex/main8.2.tex/main8.3.tex</li>
+<li>Скомпилированные pdf файлы с изображениями графиков</li>
+<li>Отчет и презентация markdown</li>
+<li>Видеоотчеты о проделанной работе</li>
+</ul>
+<hr>
+<h1 id="%D0%B8%D1%82%D0%BE%D0%B3%D0%B8">Итоги</h1>
+<ul>
+<li>Tikz позволяет строить схемы и графики программно, включая их прямо в текст документа при компиляции .tex файла</li>
+<li>Полярные координаты удобны для построения сложных многоугольников и графов</li>
+<li><code>plot</code> с <code>domain/samples</code> позволяет быстро рисовать функции</li>
+<li>Для построения фракталов необходимо использовать оптимизацию (а именно рекурсию)</li>
+</ul>
+<hr>
+<h1 id="%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Приложения</h1>
+<h2 id="%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8-%D0%B8-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8">Источники и ссылки</h2>
+<ul>
+<li>
+<p>Документация Beamer (User Guide)</p>
+</li>
+<li>
+<p>Документация LaTeX Project</p>
+</li>
+<li>
+<p>D. Tse, P. Viswanath — <em>Fundamentals of Wireless Communication</em></p>
+</li>
+<li>
+<p>A. Goldsmith — <em>Wireless Communications</em></p>
+</li>
+</ul>
+<p><strong>Репозиторий:</strong> <a href="https://github.com/PepsiMonster/SciWriting/tree/main/ex7">https://github.com/PepsiMonster/SciWriting/tree/main/ex7</a></p>
+
+</body>
+</html>
