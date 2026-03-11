@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Лобов М. С.">
+  <title>Презентация лабораторной работы №1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" id="theme">
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Презентация лабораторной работы №1</h1>
+  <p class="subtitle">Простейший шаблон</p>
+  <p class="author">Лобов М. С.</p>
+  <p class="date">26 января 2026</p>
+</section>
+
+<section id="цель-работы" class="slide level1">
+<h1>Цель работы</h1>
+<ul>
+<li>Освоить математический режим </li>
+<li>Научиться набирать формулы в inline и display режимах</li>
+<li>Использовать пакет <code>amsmath</code> для многострочных выражений</li>
+<li>Попробовать греческие буквы и математические шрифты</li>
+<li>Проверить опции <code>[fleqn]</code> и <code>[leqno]</code></li>
+</ul>
+</section>
+<section id="задание" class="slide level1">
+<h1>Задание</h1>
+<ol type="1">
+<li>Переключить примеры между inline и display</li>
+<li>Добавить греческие буквы (нижний и верхний регистр)</li>
+<li>Поэкспериментировать со шрифтами в математике и их вложенностью</li>
+<li>Применить <code>[fleqn]</code> для выравнивания формул слева</li>
+<li>Применить <code>[leqno]</code> для переноса номеров формул влево</li>
+</ol>
+</section>
+<section id="math-mode-особенности" class="slide level1">
+<h1>Math mode: особенности</h1>
+<ul>
+<li>В математическом режимер пробелы игнорируются
+<ul>
+<li>их необходимо явно задавать</li>
+</ul></li>
+<li>Отступы между символами ставятся автоматически</li>
+<li>Формулы набираются логически, а не рисуются</li>
+</ul>
+</section>
+<section id="inline-va-display" class="slide level1">
+<h1>Inline va Display</h1>
+<p><strong>Inline</strong> - формула внутри строки</p>
+<p>sample text and formula: <span class="math inline"><em>y</em> = <em>m</em><em>x</em> + <em>c</em></span></p>
+<p><strong>Display</strong> - формула отдельным блоком:</p>
+<p><span class="math display"><em>y</em> = <em>m</em><em>x</em> + <em>c</em></span></p>
+</section>
+<section id="индексы-и-степени" class="slide level1">
+<h1>Индексы и степени</h1>
+<ul>
+<li>Надстрочный индекс: <span class="math inline"><em>a</em><sup><em>b</em></sup></span></li>
+<li>Пожстрочный индекс: <span class="math inline"><em>a</em><sub><em>b</em></sub></span></li>
+<li>Комбинирование: <span class="math inline"><em>a</em><sub><em>b</em></sub><sup><em>c</em></sup></span></li>
+</ul>
+<p>Из-за специфики markdown отображение <span class="math inline"><em>L</em><em>a</em><em>T</em><em>e</em><em>x</em></span> было изменено, оригинальный вид: $ a^{b} $, $ a_{b} $, $ a_{b}^{c} $.</p>
+</section>
+<section id="греческие-буквы" class="slide level1">
+<h1>Греческие буквы</h1>
+<p>Строчные:<br />
+<span class="math display"><em>α</em>, <em>β</em>, <em>γ</em>, <em>θ</em>, <em>λ</em>, <em>π</em>, <em>ω</em></span></p>
+<p>Прописные:<br />
+<span class="math display"><em>Γ</em>, <em>Δ</em>, <em>Θ</em>, <em>Λ</em>, <em>Π</em>, <em>Ω</em></span></p>
+</section>
+<section id="интеграл-и-дифференциал" class="slide level1">
+<h1>Интеграл и дифференциал</h1>
+<p>Пример несобственного интеграла:</p>
+<p><span class="math display">∫<sub> − ∞</sub><sup> + ∞</sup><em>e</em><sup> − <em>x</em><sup>2</sup></sup> <em>d</em><em>x</em></span></p>
+<p>Тонкий пробел перед <span class="math inline"><em>d</em><em>x</em></span>: <code>\,</code></p>
+</section>
+<section id="нумерование-формул" class="slide level1">
+<h1>Нумерование формул</h1>
+<p>Внутри окружения <code>equation</code>:</p>
+<p><span class="math display">(пример)  ∫<sub> − ∞</sub><sup> + ∞</sup><em>e</em><sup> − <em>x</em><sup>2</sup></sup> <em>d</em><em>x</em></span></p>
+<p>Нумерация назначается в документе автоматически.</p>
+</section>
+<section id="amthmath" class="slide level1">
+<h1><code>amthmath</code></h1>
+<p>Пакет <code>amthmath</code> позволяет использовать: - многострочные формулы - выравнивание по знакам - матрицу и улучшенные окружения - вставка текста внутри математики через <code>$\text{содержание}$</code></p>
+</section>
+<section id="align-выравнивание-по-знакам" class="slide level1">
+<h1><code>align</code>: выравнивание по знакам</h1>
+<p><strong>Как выглядит без разметки:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a &amp;= b + 1 <span class="fu">\\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c &amp;= d + 2 <span class="fu">\\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>e &amp;= f + 3</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span></code></pre></div>
+<p>Удобно для систем и преобразований.</p>
+</section>
+<section id="gather-и-multline" class="slide level1">
+<h1><code>gather и multline</code></h1>
+<p><code>gather</code> - строки без выравнивания</p>
+<p><strong>Оригинал:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gathered</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x^2 + x = 10 <span class="fu">\\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>P(x)=ax^{5}+bx^{4}+cx^{3}+dx^{2}+ex + f</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gathered</span>}</span></code></pre></div>
+<p><code>multline</code> - длинная формула на несколько строк.</p>
+</section>
+<section id="матрицы-в-amthmath" class="slide level1">
+<h1>Матрицы в <code>amthmath</code></h1>
+<p><strong>Оригинал:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">pmatrix</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">a &amp; b &amp; c </span><span class="sc">\\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">d &amp; e &amp; f</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">pmatrix</span>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\quad</span></span></code></pre></div>
+</section>
+<section id="шрифты-в-математике" class="slide level1">
+<h1>Шрифты в математике</h1>
+<p><span class="math inline"><em>d</em><em>x</em></span> - прямой шрифт <span class="math inline"><em>w</em><em>o</em><em>r</em><em>d</em></span> - слово как текст <span class="math inline"><strong>M</strong><em>x</em></span> - матрица или вектор <span class="math inline">A<em>x</em></span> <span class="math inline"><code>c</code><code>o</code><code>d</code><code>e</code></span> <span class="math inline">ℝ</span></p>
+</section>
+<section id="вложенность-шрифтов" class="slide level1">
+<h1>Вложенность шрифтов</h1>
+<p>По итогам компиляции, было установлено, что:</p>
+<ul>
+<li>Команды перебивают друг друга</li>
+<li>Не все шрифты применимы ко всем символам</li>
+<li>для греческих букв и знаков лучше использовать </li>
+</ul>
+<p>Пример: <span class="math display"><em>α</em> + <em>α</em> &lt; <em>β</em> + <em>β</em></span></p>
+</section>
+<section id="опции-fleqn-и-leqno" class="slide level1">
+<h1>Опции <code>[fleqn]</code> и <code>[leqno]</code></h1>
+<p><code>[fleqn]</code> делает формулы “по левому краю” — удобно в отчётах и ГОСТ-оформлении. По умолчанию номера формул центрируются. <code>[leqno]</code> переносит номера формул влево — полезно для некоторых шаблонов/требований. По умолчанию номера формул показываются справа.</p>
+</section>
+<section id="итог" class="slide level1">
+<h1>Итог</h1>
+<p>В ходе работы:</p>
+<ul>
+<li>освоены inline и display режимы</li>
+<li>добавлены греческие буквы и индексы</li>
+<li>применён <code>amsmath</code> для многострочных формул и матриц</li>
+<li>протестированы математические шрифты и вложенность</li>
+<li>проверены опции <code>[fleqn]</code> и <code>[leqno]</code></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  // reveal.js plugins
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

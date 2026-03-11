@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Лобов М. С.">
+  <title>Презентация лабораторной работы №1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" id="theme">
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Презентация лабораторной работы №1</h1>
+  <p class="subtitle">Простейший шаблон</p>
+  <p class="author">Лобов М. С.</p>
+  <p class="date">26 января 2026</p>
+</section>
+
+<section id="лабораторная-работа-6" class="slide level1">
+<h1>Лабораторная работа №6</h1>
+<h2 id="библиография-в-latex">Библиография в LaTex</h2>
+<p><strong>Инструменты</strong>: BibTex/Biber, стили author-year и numeric.</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># Цели работы</td>
+</tr>
+<tr class="even">
+<td>- Освоить цитирование и список литературы в LaTeX  </td>
+</tr>
+<tr class="odd">
+<td>- Сравнить подходы:</td>
+</tr>
+<tr class="even">
+<td>- <code>natbib</code> + <strong>BibTeX</strong></td>
+</tr>
+<tr class="odd">
+<td>- <code>biblatex</code> + <strong>Biber</strong></td>
+</tr>
+<tr class="even">
+<td>- Проверить:</td>
+</tr>
+<tr class="odd">
+<td>- добавление новых записей в <code>.bib</code></td>
+</tr>
+<tr class="even">
+<td>- ссылку на отсутствующий ключ</td>
+</tr>
+<tr class="odd">
+<td>- переключение стилей на numeric</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="база-источников-.bib" class="slide level1">
+<h1>База источников .bib</h1>
+<ul>
+<li>Источники хранятся в файле <code>*.bib</code></li>
+<li>Каждая запись имеет ключ (например, <code>Graham1995</code>)</li>
+<li>Цитирование в тексте идёт по ключу:
+<ul>
+<li><code>\citet{Graham1995}</code></li>
+<li><code>\citep{Graham1995}</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">Lamport1994</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="er"> </span> <span class="st">author</span> <span class="er"> </span> <span class="er"> </span>= {Leslie Lamport},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="er"> </span> <span class="st">title</span> <span class="er"> </span> <span class="er"> </span> = {LaTeX: A Document Preparation System},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="er"> </span> <span class="st">year</span> <span class="er"> </span> <span class="er"> </span> <span class="er"> </span>= {1994},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="er"> </span> <span class="st">publisher</span> = {Addison-Wesley}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># <code>natbib</code> команды для цитирования</td>
+</tr>
+<tr class="even">
+<td>* <strong>Текстовая</strong> ссылка: * автор как часть предложения <code>\citet{Graham1995}</code></td>
+</tr>
+<tr class="odd">
+<td>* <strong>В скобках</strong>: * <code>\citep{Graham1995}</code></td>
+</tr>
+<tr class="even">
+<td>* <strong>Страницы/комментарии</strong>: * <code>\citep[p.~56]{Thomas2008}</code>, <code>\citep[См.][pp.~45--48]{Graham1995}</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="natbib-пример-в-тексте" class="slide level1">
+<h1><code>natbib</code> пример в тексте</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Пример по математике взят из <span class="kw">\citet</span>{<span class="ex">Graham1995</span>}.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Ссылка в скобках: <span class="kw">\citep</span>{<span class="ex">Graham1995</span>}.</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>С указанием страниц: <span class="kw">\citep</span>[p.~56]{<span class="ex">Thomas2008</span>}.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Несколько источников: <span class="kw">\citep</span>{<span class="ex">Graham1995,Thomas2008</span>}.</span></code></pre></div>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># Сборка <code>natbib</code> в bibtex</td>
+</tr>
+<tr class="even">
+<td>Для корректности ссылок и списка литературы нужен цикл в несколько компиляций ```bash</td>
+</tr>
+<tr class="odd">
+<td>pdflatex main6.tex</td>
+</tr>
+<tr class="even">
+<td>bibtex main6</td>
+</tr>
+<tr class="odd">
+<td>pdflatex main6.tex</td>
+</tr>
+<tr class="even">
+<td>pdflatex main6.tex</td>
+</tr>
+<tr class="odd">
+<td>```</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="что-происходит-при-сборке" class="slide level1">
+<h1>Что происходит при сборке</h1>
+<ol type="1">
+<li>Latex создает .aux (список использованных ключей)</li>
+<li>BibTex формирует библиографию (.bbl)</li>
+<li>2й и 3й прогоны LaTex
+<ol type="1">
+<li>подтягивают список литературы</li>
+<li>донастраивают номера сслык и перекрестные ссылки</li>
+</ol></li>
+</ol>
+</section>
+<section id="numeric-режим-в-natbib" class="slide level1">
+<h1>Numeric-режим в <code>natbib</code></h1>
+<p>Чтобы вместо author–year получить числовые ссылки:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[numbers]{<span class="ex">natbib</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>} <span class="co">% или unsrt</span></span></code></pre></div>
+<p>Тогда <code>\citep{...}</code> выглядит как [1], [2]</p>
+</section>
+<section id="использование-biblatex" class="slide level1">
+<h1>Использование <code>biblatex</code></h1>
+<ul>
+<li>Более гибкий механизм оформления библиографии</li>
+<li>Обычно используется вместе в biber</li>
+<li>Стиль задается опциями пакета</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[style=numeric,backend=biber]{<span class="ex">biblatex</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\addbibresource</span>{learnlatex.bib}</span></code></pre></div>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># Сборка <code>biblatex</code> в Biber</td>
+</tr>
+<tr class="even">
+<td><span class="math display">LaTeX → Biber → LaTeX</span></td>
+</tr>
+<tr class="odd">
+<td>```bash</td>
+</tr>
+<tr class="even">
+<td>pdflatex main6.tex</td>
+</tr>
+<tr class="odd">
+<td>biber main6</td>
+</tr>
+<tr class="even">
+<td>pdflatex main6.tex</td>
+</tr>
+<tr class="odd">
+<td>```</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="сравнение-подходов" class="slide level1">
+<h1>Сравнение подходов</h1>
+<p><strong>natbib + BibTeX</strong></p>
+<ul>
+<li><p>простой и распространённый вариант</p></li>
+<li><p>удобно для классических шаблонов</p></li>
+<li><p>стили зависят от <code>.bst</code></p></li>
+</ul>
+<p><strong>biblatex + Biber</strong></p>
+<ul>
+<li><p>гибкие настройки прямо в LaTeX</p></li>
+<li><p>проще кастомизировать</p></li>
+<li><p>современный рекомендуемый подход во многих проектах</p></li>
+</ul>
+</section>
+<section id="итоги-работы" class="slide level1">
+<h1>Итоги работы</h1>
+<ul>
+<li><p>Освоены <code>\citet</code> / <code>\citep</code> и параметры цитат</p></li>
+<li><p>Реализована база <code>.bib</code> и добавление новых записей</p></li>
+<li><p>Проверено поведение при отсутствующем ключе</p></li>
+<li><p>Выполнены эксперименты со стилями:</p></li>
+</ul>
+<p>  * numeric в <code>natbib</code></p>
+<p>  * <code>style=numeric</code> в <code>biblatex</code></p>
+<ul>
+<li>Отработаны процессы сборки BibTeX и Biber</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  // reveal.js plugins
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

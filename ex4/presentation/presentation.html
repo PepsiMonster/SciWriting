@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Лобов М. С.">
+  <title>Презентация лабораторной работы №1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freset%2Ecss">
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ecss">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Ftheme%2Fbeige%2Ecss" id="theme">
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Презентация лабораторной работы №1</h1>
+  <p class="subtitle">Простейший шаблон</p>
+  <p class="author">Лобов М. С.</p>
+  <p class="date">26 января 2026</p>
+</section>
+
+<section id="лабораторная-работа-4" class="slide level1">
+<h1>Лабораторная работа №4</h1>
+<h2 id="including-graphics-latex">Including graphics <span class="math inline"><em>L</em><em>a</em><em>T</em><em>e</em><em>x</em></span></h2>
+<p>Тема: подключение изображений, floats, ссылок, <code>\label</code>, <code>\ref</code>, сравнение <code>\textwidth</code> и <code>\linewidth</code>.</p>
+</section>
+<section id="цель-работы" class="slide level1">
+<h1>Цель работы</h1>
+<ul>
+<li><p>  Научиться подключать внешние изображения в LaTeX через <code>graphicx</code></p></li>
+<li><p>  Освоить параметры изменения вида рисунков: размер, поворот, обрезка</p></li>
+<li><p>  Понять, как работают <em>floats</em> и спецификаторы размещения</p></li>
+<li><p>  Разобраться с перекрёстными ссылками и количеством прогонов</p></li>
+</ul>
+<p>    компиляции</p>
+<ul>
+<li>  Сравнить <code>\textwidth</code> и <code>\linewidth</code> (в т.ч. в режиме <code>twocolumn</code>)</li>
+</ul>
+</section>
+<section id="задание" class="slide level1">
+<h1>Задание</h1>
+<ol type="1">
+<li><p> Вставить собственное изображение из подпапки <code>figs/</code></p></li>
+<li><p> Исследовать <code>height</code>, <code>width</code>, <code>scale</code>, <code>angle</code>, <code>trim</code>, <code>clip</code></p></li>
+<li><p> Добавить «длинный» текст через <code>lipsum</code>, протестировать float’ы <code>[h,t,b,p]</code></p></li>
+<li><p> Сравнить <code>\textwidth</code> и <code>\linewidth</code> (обычный режим и <code>twocolumn</code>)</p></li>
+<li><p> Проверить работу <code>\label/\ref</code>, включая намеренно неправильные случаи</p></li>
+</ol>
+</section>
+<section id="структура-проекта" class="slide level1">
+<h1>Структура проекта</h1>
+<ul>
+<li><p>  <code>main4_ru.tex</code> / <code>main4.tex</code> — исходники (RU/EN)</p></li>
+<li><p>  <code>figs/image.png</code> — своё изображение</p></li>
+<li><p>  <code>main4_ru.pdf</code> / <code>main4.pdf</code> — результат компиляции</p></li>
+<li><p>  <code>report.md</code> → <code>report.pdf</code>, <code>report.docx</code></p></li>
+<li><p>  <code>presentation.md</code> → <code>presentation.pdf</code></p></li>
+</ul>
+</section>
+<section id="подключение-графиков" class="slide level1">
+<h1>Подключение графиков</h1>
+<p>Для внешних изображений испольуется пакет <code>graphicx</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span></code></pre></div>
+<p>Картинку графика храним в подпапке, на которую указываем путь в преамбуле:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\graphicspath</span>{{figs/}}</span></code></pre></div>
+</section>
+<section id="вставка-изображения" class="slide level1">
+<h1>Вставка изображения</h1>
+<p>Минимальный(базовый) пример:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[height=2cm]{<span class="ex">image.png</span>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span></code></pre></div>
+</section>
+<section id="управление-размером" class="slide level1">
+<h1>Управление размером</h1>
+<p>Часто задают размеры относительно текста страницы:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[height=0.35<span class="fu">\textheight</span>]{<span class="ex">image.png</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.55<span class="fu">\textwidth</span>]{<span class="ex">image.png</span>}</span></code></pre></div>
+<p><strong>width</strong> - ширина <strong>height</strong> - высота</p>
+<p>Пропорции сохраняются автоматически.</p>
+</section>
+<section id="масштаб-и-поворот" class="slide level1">
+<h1>Масштаб и поворот</h1>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[scale=0.6]{<span class="ex">image.png</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[angle=15, scale=0.6]{<span class="ex">image.png</span>}</span></code></pre></div>
+<p><strong>scale</strong> - общий масштаб <strong>angle</strong> - поворот в градусах</p>
+</section>
+<section id="обрезка-trim-и-clip" class="slide level1">
+<h1>Обрезка trim и clip</h1>
+<p><code>trim</code> задается как <strong>left, botom, right, top</strong>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[clip,trim=20 10 80 40,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  width=0.6<span class="fu">\textwidth</span>]{<span class="ex">image.png</span>}</span></code></pre></div>
+</section>
+<section id="зачем-нужен-lipsum" class="slide level1">
+<h1>Зачем нужен lipsum</h1>
+<p>Чтобы <span class="math inline"><em>L</em><em>a</em><em>T</em><em>e</em><em>x</em></span> мог двигать float графики нужен был объемный текст</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">lipsum</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\lipsum</span>[1-4]</span></code></pre></div>
+</section>
+<section id="floats-рисунки-как-плавающие-объекты" class="slide level1">
+<h1>Floats: рисунки как плавающие объекты</h1>
+<p>Пример float’а:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[ht]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[width=0.6<span class="fu">\textwidth</span>]{<span class="ex">image.png</span>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{Пример float с [ht].}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:ht</span>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+<p>Внутри float лучше использовать <code>\centering</code>, а не <code>center</code></p>
+</section>
+<section id="спецификаторы-размещения" class="slide level1">
+<h1>Спецификаторы размещения</h1>
+<ul>
+<li><p>  <code>[h]</code> — here (если получится)</p></li>
+<li><p>  <code>[t]</code> — top (вверх страницы)</p></li>
+<li><p>  <code>[b]</code> — bottom (вниз страницы)</p></li>
+<li><p>  <code>[p]</code> — отдельная страница для float’ов</p></li>
+</ul>
+<p>LaTeX выбирает оптимально, если места «здесь» нет</p>
+</section>
+<section id="принудительно-строго-здесь-h" class="slide level1">
+<h1>Принудительно «строго здесь»: [H]</h1>
+<p>Пакет <code>float</code> добавляет <code>[H]</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">float</span>}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[H]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\centering</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">\includegraphics</span>[width=0.55<span class="fu">\textwidth</span>]{<span class="ex">image.png</span>}</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\caption</span>{Строгое размещение [H].}</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\label</span>{<span class="ex">fig:H</span>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code></pre></div>
+<p>Может создавать большие пустые области — использовать осторожно</p>
+</section>
+<section id="перекрёстные-ссылки" class="slide level1">
+<h1>Перекрёстные ссылки</h1>
+<p>Ставим метку:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:ht</span>}</span></code></pre></div>
+<p>Ссылаемся:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>см. рисунок~<span class="kw">\ref</span>{<span class="ex">fig:ht</span>}</span></code></pre></div>
+<p>Тильда <code>~</code> не даёт переносить строку между словом и номером</p>
+</section>
+<section id="почему-нужны-2-прогона-компиляции" class="slide level1">
+<h1>Почему нужны 2 прогона компиляции</h1>
+<p><code>\label</code> <code>\ref</code> используют <code>.aux</code> файл:</p>
+<ol type="1">
+<li><p> 1-й прогон: LaTeX «собирает» номера и записывает их в <code>.aux</code></p></li>
+<li><p> 2-й прогон: подставляет номера в текст</p></li>
+</ol>
+<p>Если присутвуют <code>??</code> — просто собираем ещё раз Обычно нужно минимум 2 прогона.</p>
+</section>
+<section class="slide level1">
+
+<h2 id="где-правильно-ставить-label-в-figure">Где правильно ставить <code>\label</code> в figure</h2>
+<p>✅ Правильно: <strong>после</strong> (или внутри) <code>\caption</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{...}</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:ok</span>}</span></code></pre></div>
+<p>❌ Неправильно: до <code>\caption</code></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:wrong</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{...}</span></code></pre></div>
+<p>Потому что <code>\label</code> ссылается на <strong>последний пронумерованный объект</strong></p>
+</section>
+<section id="label-в-equation-правильно-и-неправильно" class="slide level1">
+<h1><code>\label</code> в equation: правильно и неправильно</h1>
+<p>✅ Правильно (внутри окружения):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">e^{i</span><span class="sc">\pi</span><span class="ss">}+1=0</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\label</span><span class="ss">{eq:inside}</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
+<p>❌ Неправильно (после окружения)</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ss">a^2+b^2=c^2</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">eq:outside</span>}</span></code></pre></div>
+</section>
+<section id="textwidth-vs-linewidth" class="slide level1">
+<h1><code>\textwidth</code> vs <code>\linewidth</code></h1>
+<ul>
+<li><p>  <code>\textwidth</code> — ширина текстового блока страницы</p></li>
+<li><p>  <code>\linewidth</code> — текущая ширина строки (может отличаться локально)</p></li>
+<li><p>В <code>twocolumn</code> разница заметна: <code>\linewidth</code> ≈ ширина колонки</p></li>
+</ul>
+</section>
+<section id="эксперимент-с-twocolumn" class="slide level1">
+<h1>Эксперимент с twocolumn</h1>
+<p>Компилируем два варианта:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[a4paper,12pt]{<span class="ex">article</span>}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[a4paper,12pt,twocolumn]{<span class="ex">article</span>}</span></code></pre></div>
+<p>И сравниваем:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.8<span class="fu">\textwidth</span>]{<span class="ex">image.png</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.8<span class="fu">\linewidth</span>]{<span class="ex">image.png</span>}</span></code></pre></div>
+</section>
+<section id="компиляция" class="slide level1">
+<h1>Компиляция</h1>
+<p>Обычно достаточно <code>pdflatex</code> (и два прогона):</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pdflatex main4_ru<span class="op">.</span><span class="fu">tex</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>pdflatex main4_ru<span class="op">.</span><span class="fu">tex</span></span></code></pre></div>
+<p>Для EN-версии аналогично:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pdflatex main4<span class="op">.</span><span class="fu">tex</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>pdflatex main4<span class="op">.</span><span class="fu">tex</span></span></code></pre></div>
+</section>
+<section id="итоги" class="slide level1">
+<h1>Итоги</h1>
+<p>Выполнено:</p>
+<ul>
+<li><p>  Подключена собственная графика из <code>figs/</code></p></li>
+<li><p>  Проверены <code>height/width/scale/angle/trim/clip</code></p></li>
+<li><p>  Исследованы float’ы и спецификаторы <code>[h,t,b,p]</code> + <code>[H]</code></p></li>
+<li><p>  Изучены перекрёстные ссылки и необходимость (2) прогонов</p></li>
+<li><p>  Показана разница <code>\textwidth</code> и <code>\linewidth</code> (в т.ч. <code>twocolumn</code>)</p></li>
+<li><p>  Подготовлены отчёт и презентация, материалы опубликованы</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fdist%2Freveal%2Ejs"></script>
+
+  // reveal.js plugins
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fnotes%2Fnotes%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fsearch%2Fsearch%2Ejs"></script>
+  <script src="data:text/plain;charset=UTF-8;charset=utf-8,Not%20found%3A%20%2Freveal%2Ejs%404%2E6%2E1%2F%2Fplugin%2Fzoom%2Fzoom%2Ejs"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

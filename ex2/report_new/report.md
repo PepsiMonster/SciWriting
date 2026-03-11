@@ -1,6 +1,6 @@
 ---
 ## Front matter
-title: "Отчет по лабораторной работе №1 по предмету Computer skills for scientific writing"
+title: "Отчет по лабораторной работе №2 по предмету Computer skills for scientific writing"
 author: "Лобов Михаил Сергеевич"
 
 ## Generic options
@@ -35,15 +35,15 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mainfont: "Times New Roman"
+romanfont: "Times New Roman"
+sansfont: "Arial"
+monofont: "Consolas"
+## mathfont: STIX Two Math
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 mathfontoptions:
 
 ## Biblatex
@@ -73,94 +73,122 @@ header-includes:
   - \floatplacement{figure}{H}
 ---
 
-
 # Цель работы 
 
-Настроить локальную среду для работы с LaTex, установить дистрибутив TexLive и проверить его работоспособность (компиляцию pdflatex). Необходимо собрать минималистичные Tex документ и скомпилировать его в pdf.
+Изучить базовую структуру LaTex документа (преамбула и тело) и научиться компилировать `.tex` в PDF с помощью `pdflatex`, а также освоить работу со спецсимволами и сносками.
 
-# Задание 
+# Задание
 
-1. Установить TexLive на рабочую систему
-2. Проверить корректность установки 
-3. Создать минимальный LaTex документ и скомпилировать его в pdf
-4. Зафиксировать шаги выполнения (команды, результаты компиляции, артефакты)
-5. Подготовить отчет и презентацию по проделанной работе
+1. Создать простой LaTex документ и разработать его структуру:
+   1. преамбула
+   2. тело окружения `\begin{...}`
+2. Добавить комментарии, сноску и сделать несколько абзацев
+3. Проверить работу жесткого неразрывного пробела
+4. Вывести в документе набор спецсимволов LaTex и способы их печати
+5. Подготовить русскую и английскую версии исходников и результатов компиляции
+6. Опубликовать результаты в репозитории GitHub
 
-# Теоретическое введение
+# Теоретическое введение 
 
-LaTex - это система компьютерной вёрстки, в которой документ создаётся как исходный текст с разметкой. В отличие от текстовых редакторов WYSIWYG, пользователь описывает структуру документа командами (например, `\section` для разделов), а итоговый PDF получается после компиляции.
+LaTeX — это система компьютерной вёрстки, в которой документ создаётся как текстовый файл с разметкой-командами. В отличие от WYSIWYG-редакторов, LaTeX описывает *структуру* документа (разделы, абзацы, списки, таблицы), а итоговый вид формируется на этапе компиляции в PDF.
 
-Рабочий процесс включает: 
-- написание исходника .tex
-- запуск компилятора и получение pdf
-- при наличии ссылок/оглавления/цитирований может понадобиться несколько прогонов компиляции
+Базовая структура LaTex документа включает:
+- **Преамбулу**, все то, что идет до `\begin{document}`
+```latex
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+```
+- **Тело документа**, все то, что идет между `\begin{document}` и `\end{document}`
+```latex
+\begin{document}
 
-TeX Live — один из наиболее полных и распространённых дистрибутивов LaTeX, доступный для разных ОС. В Windows удобный способ установки — через менеджер пакетов Chocolatey.
+...
 
-# Выполнение лабораторной работы
-
-## 0.
-
-Установка Chocolatey для удобной загрузки пакетов через powershell.
-
-## 1. Подготовка среды
-
-Открытие windows powershell от имени администратора.
-
-## 2. Установка TexLive
-
-Установка выполнена через Chocolatey:
-
-```powershell
-choco install texlive
+\end{document}
 ```
 
-## 3. Проверка установки
+Абзацы в LaTex отделяются **пустой строкой**. Спецсимволы (`\`, `{`, `}`, `%`, `$`, `&`, `#`, `_` и др.) имеют служебное значение и печатаются с экранированием (например, `\%`, `\{`), либо командами (`\textbackslash`, `\textasciitilde`).
 
-```powershell
-pdflatex --version
-```
+# Выполнение лаборатной работы
 
-## 4. Создание документа
+## 1. Создание минимального документа 
 
-```Latex
+Был создан `main2.tex` (английская версия) со структурой:
+```latex
 \documentclass{article}
 \usepackage[T1]{fontenc}
 
 \begin{document}
-Hello world!
-
-This is a first document.
+Hey world!
+This is a second document.
 \end{document}
 ```
+Для выполнения компиляции использовалась команда `pdflate main2.tex`. В результате получен файл main2.pdf, а также main2.log и main2.aux.
 
-## 5. Компиляция документа 
+## 2. Структура документа и окружения
 
-```powershell
-pdflatex main.tex
+Документ был расширен до примера с комментариями, сноской и 2мя абзацами. Также показано, что окружения должны корректно закрываться: для каждого \begin{x} должен быть \end{x}, причём при вложенности закрытие идёт в обратном порядке.
+
+## 3. Неразрывный пробел
+
+Добавлен пример hard space ~ для предотвращения переноса строки межлу связанными фрагментами текста.
+
+## 4. Специальные символы LaTex
+
+В документ добавлен список наиболее часто используемых спецсимволов и способов их печати:
+```latex
+\begin{itemize}
+  \item Curly braces: \{ and \}
+  \item Dollar sign: \$ (so we can show money like \$10)
+  \item Percent sign: \% (otherwise it starts a comment)
+  \item Ampersand: \& (otherwise used in tables)
+  \item Hash: \# 
+  \item Underscore: \_ (often used in math, so needs escaping in text)
+  \item Backslash: \textbackslash
+  \item Caret: \textasciicircum
+  \item Tilda: \textasciitilde
+\end{itemize}
 ```
 
-После успешной компиляции у нас появятся файлы:
-- main.pdf
-- main.aux
-- main.log
+## 5. Русская версия документа
 
-## 6. Результат компиляции 
+Для русской версии документа подготовлен файл main2_ru.tex со следующими настройками локализации:
+```latex 
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+```
 
-![alt text](../figure.png)
+Это обеспечивает корректный набор кирилицы в pdflatex.
 
-# Формирование отчета и презентации
+# Формирование отчета
 
-- Подготовлен отчет в markdown по шаблону.
-- Отчет конвертируется в docx и pdf с использованием pandoc
-- Подготовка презентации marp и экспорт ее в pdf
-- Защита презентации и публикация скринкастов
-- Материалы размещаются в репозитории
+Подготовлены исходные файлы: main2.tex, main2_ru.tex.
+
+Выполнена компиляция в PDF: main2.pdf, main2_ru.pdf.
+
+Сформирован отчёт в Markdown и презентация в формате Marp.
+
+Материалы опубликованы в репозитории.
 
 # Выводы
-В ходе работы была установлена и проверена система TexLive, освоена базовая структура Latex докумнета и выполнена компиляция исходного файла в pdf. Подготовлена основа для дальнейших лабораторных работ.
+
+В ходе работы освоены базовые принципы LaTex:
+- структура документа
+- разделение на преамбулу и тело
+- правила создания абзацев
+- использование окружений, комментариев и сносок
+
+Отдельно изучены способы печати спецсимволов и применение неразрывного пробела ~. Подготовлены русская и английская версия исодников и результатов компиляции, а также оформленны материалы для публикации на GitHub.
 
 # Список литературы
 
-# Приложение ссылки на скринкасты и репозиторий
+LearnLaTex: https://www.learnlatex.org/
+LaTex Project: https://www.latex-project.org/
+Tex Live: https://www.tug.org/texlive/
 
+# Приложения
+
+Репозиторий с материалами:
+https://github.com/PepsiMonster/SciWriting/tree/main/ex2
