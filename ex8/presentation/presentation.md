@@ -74,29 +74,29 @@ header-includes:
 # Граф (2/3)
 Задаем ребра и строим диагонали
 
-\draw (A) -- (B);
-\draw (B) -- (C);
-\draw (C) -- (D);% рёбра
-\draw (D) -- (E);
-\draw (E) -- (A);
+`\draw` (A) -- (B);
+`\draw` (B) -- (C);
+`\draw` (C) -- (D);% рёбра
+`\draw` (D) -- (E);
+`\draw` (E) -- (A);
 
-\draw[dashed] (A) -- (C);% диагонали
-\draw[dashed] (B) -- (D);
+`\draw`[dashed] (A) -- (C);% диагонали
+`\draw`[dashed] (B) -- (D);
 
 
 --- 
 ![alt text](image1.png)
 
 --- 
-# График функции $y=\sin x$
+# График функции `y=\sin x`
 ```latex
-\draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
+draw[->] (-3.5,0) -- (3.5,0) node[right] {$x$};
 
-\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
 
   
 
-\draw[domain=-3.14:3.14, samples=200]
+draw[domain=-3.14:3.14, samples=200]
 
   plot (\x, {sin(\x r)})
 

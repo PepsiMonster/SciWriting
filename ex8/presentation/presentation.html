@@ -131,10 +131,10 @@
 <td># Граф (2/3) Задаем ребра и строим диагонали</td>
 </tr>
 <tr class="even">
-<td>(A) – (B); (B) – (C); (C) – (D);% рёбра (D) – (E); (E) – (A);</td>
+<td><code>\draw</code> (A) – (B); <code>\draw</code> (B) – (C); <code>\draw</code> (C) – (D);% рёбра <code>\draw</code> (D) – (E); <code>\draw</code> (E) – (A);</td>
 </tr>
 <tr class="odd">
-<td>(A) – (C);% диагонали (B) – (D);</td>
+<td><code>\draw</code>[dashed] (A) – (C);% диагонали <code>\draw</code>[dashed] (B) – (D);</td>
 </tr>
 </tbody>
 </table>
@@ -147,13 +147,13 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td># График функции <span class="math inline"><em>y</em> = sin <em>x</em></span> ```latex (-3.5,0) – (3.5,0) node[right] {<span class="math inline"><em>x</em></span>};</td>
+<td># График функции <code>y=\sin x</code> ```latex draw[-&gt;] (-3.5,0) – (3.5,0) node[right] {<span class="math inline"><em>x</em></span>};</td>
 </tr>
 <tr class="even">
-<td>(0,-1.5) – (0,1.5) node[above] {<span class="math inline"><em>y</em></span>};</td>
+<td>draw[-&gt;] (0,-1.5) – (0,1.5) node[above] {<span class="math inline"><em>y</em></span>};</td>
 </tr>
 <tr class="odd">
-<td></td>
+<td>draw[domain=-3.14:3.14, samples=200]</td>
 </tr>
 <tr class="even">
 <td>  plot (, {sin(r)})</td>
