@@ -35,15 +35,15 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mainfont: "Times New Roman"
+romanfont: "Times New Roman"
+sansfont: "Arial"
+monofont: "Consolas"
+# mathfont: STIX Two Math
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 mathfontoptions:
 
 ## Biblatex
@@ -141,8 +141,8 @@ header-includes:
 ## Компиляция 
 
 Возможны 2 варианта компиляции в зависимости от класса документа. 
-* Первый $\documentclass[xcolor={svgnames}]{beamer}$ учтет наши `\pause` и `\uncover` и покажет также промежуточные результаты.
-* Второй $\documentclass[handout,xcolor={svgnames}]{beamer}$ позволит учитывать только `\frame` и не будет отображать промежуточные результаты. 
+* Первый `\documentclass[xcolor={svgnames}]{beamer}` учтет наши `\pause` и `\uncover` и покажет также промежуточные результаты.
+* Второй `\documentclass[handout,xcolor={svgnames}]{beamer}` позволит учитывать только `\frame` и не будет отображать промежуточные результаты. 
 
 Для сборки презентации в PDF использована команда:
 ```powershell
