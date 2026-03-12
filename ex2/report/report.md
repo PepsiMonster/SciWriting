@@ -1,6 +1,6 @@
 ---
 ## Front matter
-title: "Отчет по лабораторной работе №2 по предмету Computer skills for scintific writing"
+title: "Отчет по лабораторной работе №2 по предмету Computer skills for scientific writing"
 author: "Лобов Михаил Сергеевич"
 
 ## Generic options
@@ -35,15 +35,15 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mainfont: "Times New Roman"
+romanfont: "Times New Roman"
+sansfont: "Arial"
+monofont: "Consolas"
+## mathfont: STIX Two Math
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 mathfontoptions:
 
 ## Biblatex
@@ -127,7 +127,7 @@ This is a second document.
 
 ## 2. Структура документа и окружения
 
-Документ был расширен до примера с комментариями, сноской и 2мя абзацами. Также показано, что окружения должны корректно закрываться: для каждого \begin{x} должен быть \end{x}, причём при вложенности закрытие идёт в обратном порядке.
+Документ был расширен до примера с комментариями, сноской и 2мя абзацами. Также показано, что окружения должны корректно закрываться: для каждого `\begin{x}` должен быть `\end{x}`, причём при вложенности закрытие идёт в обратном порядке.
 
 ## 3. Неразрывный пробел
 
