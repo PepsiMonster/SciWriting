@@ -35,15 +35,15 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mainfont: "Times New Roman"
+romanfont: "Times New Roman"
+sansfont: "Arial"
+monofont: "Consolas"
+# mathfont: STIX Two Math
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 mathfontoptions:
 
 ## Biblatex
@@ -91,7 +91,7 @@ header-includes:
 # Теоретическое введение
 Математический режим $LaTex$ предназначен для логичного набора формул: пробелы внутри формул игнорируются, а типографическе отступы между математическоими символами подбираются автоматически. Формулы можно набирать в тексте (inline) и отдельно в строке (display). Для более сложных конструкций часто используют пакет amsmath, который добавляет окружения выравнивания (`align`, `gather`, `multline`), матрицы и команды для типовых математических объектов.
 
-В формулах смена шрифта можент нести смысловую нагрузку (например, $\mathrm{d}$ как дифференциал, $\mathbb{R}$ как множество и так далее).
+В формулах смена шрифта можент нести смысловую нагрузку (например, `\mathrm{d}` как дифференциал, $\mathbb{R}$ как множество и так далее).
 
 # Выполнение лаборатоной работы 
 
@@ -133,7 +133,7 @@ $$
 
 ## 7. Шрифты в математике и вложенность 
 
-Использованы на практике команды ((\mathrm{}), (\mathit{}), (\mathbf{}), (\mathsf{}), (\mathtt{}), (\mathbb{})), и показано, как меняется результат при попытках вложить одни стили в другие 
+Использованы на практике команды ( `\mathrm{}`, `\mathit{}`, `\mathbf{}`, `\mathsf{}`, `\mathtt{}`, `\mathbb{}`), и показано, как меняется результат при попытках вложить одни стили в другие 
 
 ## 8. Русская и английская версия документы 
 
