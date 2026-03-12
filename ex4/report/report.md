@@ -35,15 +35,15 @@ babel-lang: russian
 babel-otherlangs: english
 
 ## Fonts
-mainfont: IBM Plex Serif
-romanfont: IBM Plex Serif
-sansfont: IBM Plex Sans
-monofont: IBM Plex Mono
-mathfont: STIX Two Math
-mainfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
-sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
-monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
+mainfont: "Times New Roman"
+romanfont: "Times New Roman"
+sansfont: "Arial"
+monofont: "Consolas"
+# mathfont: STIX Two Math
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
 mathfontoptions:
 
 ## Biblatex
@@ -77,7 +77,7 @@ header-includes:
 
 # Цель работы
 
-Изучить основы подключения графики в LaTex с использованием пакета `graphicx`, освоить управлние размером/поворотом/обрезной изображений , работу с плаваюзщеми объектами (floats), а также механизмамаи перекрестных ссылок `\label и /ref` и влияние параметров \textwidth и \linewidth. 
+Изучить основы подключения графики в LaTex с использованием пакета `graphicx`, освоить управлние размером/поворотом/обрезной изображений , работу с плаваюзщеми объектами (floats), а также механизмамаи перекрестных ссылок `\label` и `\ref` и влияние параметров `\textwidth` и `\linewidth`. 
 
 # Задание
 
@@ -111,15 +111,8 @@ LaTeX поддерживает подключение внешней графи�
    1. созданы документы main4.tex и main4_ru.tex
    2. создана подпапка figs с графиком 
 2. Подключение пакетов и пути к изображениями до начала документа
-   1. В преамбуле подключены основные пакеты для работы с графиком, float и ссылками.
-```latex
-   \usepackage{graphicx}
-   \usepackage{lipsum}
-   \usepackage{float}
-   \usepackage[hidelinks]{hyperref}
+   1. В преамбуле подключены основные пакеты для работы с графиком, float и ссылками: `\usepackage{graphicx}`, `\usepackage{lipsum}`, `\usepackage{float}`, `\usepackage[hidelinks]{hyperref}`, `\graphicspath{{figs/}}`.
 
-   \graphicspath{{figs/}}
-```
 
 3. Вставка изображения в документ
 ```latex
@@ -181,7 +174,7 @@ pdflatex main4.tex
 
 # Выводы
 
-В ходе работы были освоены базовые и расширенные способы встаки изображений в LaTex: управление размерами, поворотом и обрезкой, а также организация изображений в подпапке через `\graphicspath`. На практике подтверждено, что механизм работы float заметно влияет на итоговое расположение рисунков, а принудительное [H] может ухудшить внешний вид после верстки. Эксперименты показали различие между \textwidth и \linewidth в режиме twocolumn. Было проверено, что корректная работа перекрестных ссылок требует как минимум 2 прогонов компиляции, а неправильное рпасположение `\label` до `\caption` или после `\end{equation}` приводит к некорретным ссылкам.
+В ходе работы были освоены базовые и расширенные способы встаки изображений в LaTex: управление размерами, поворотом и обрезкой, а также организация изображений в подпапке через `\graphicspath`. На практике подтверждено, что механизм работы float заметно влияет на итоговое расположение рисунков, а принудительное [H] может ухудшить внешний вид после верстки. Эксперименты показали различие между `\textwidth` и `\linewidth` в режиме twocolumn. Было проверено, что корректная работа перекрестных ссылок требует как минимум 2 прогонов компиляции, а неправильное рпасположение `\label` до `\caption` или после `\end{equation}` приводит к некорретным ссылкам.
 
 # Список литературы 
 
